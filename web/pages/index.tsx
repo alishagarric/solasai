@@ -4,6 +4,7 @@ import React from "react";
 // Types
 import { NextPage } from "next";
 import { LargeText } from "../components/Sections/LargeText";
+import { SimpleHero } from "../components/Sections/SimpleHero/SimpleHero";
 
 // Begin Component
 // __________________________________________________________________________________________
@@ -21,7 +22,7 @@ export const HomePageClassName = "homepage";
 const HomePage: NextPage<HomePage> = () => {
   return (
     <div className={`${HomePageClassName}`}>
-      <LargeText text={`Starting point for Solas Ai`} />
+      <SimpleHero header="Reuce your regulatory, legal, and reputational risk with" guide_text="Learn More"/>
     </div>
   );
 };

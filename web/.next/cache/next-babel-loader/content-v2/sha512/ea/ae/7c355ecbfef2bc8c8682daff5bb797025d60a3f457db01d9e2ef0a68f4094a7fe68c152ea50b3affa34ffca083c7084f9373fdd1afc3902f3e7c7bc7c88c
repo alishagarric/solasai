@@ -1,0 +1,1 @@
+{"ast":null,"code":"export * from \"./MobileFooter\";","map":{"version":3,"sources":["/Users/alishagarric/Projects/react/volume/web/components/Sections/MobileFooter/index.tsx"],"names":[],"mappings":"AAAA,cAAc,gBAAd","sourcesContent":["export * from \"./MobileFooter\";\n"]},"metadata":{},"sourceType":"module"}

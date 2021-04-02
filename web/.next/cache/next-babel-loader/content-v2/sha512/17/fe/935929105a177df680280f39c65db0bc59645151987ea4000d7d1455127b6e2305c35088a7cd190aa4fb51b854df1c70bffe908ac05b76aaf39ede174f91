@@ -1,0 +1,1 @@
+{"ast":null,"code":"export * from \"./LargeText\";","map":{"version":3,"sources":["/Users/alishagarric/Projects/react/volume/web/components/Sections/LargeText/index.tsx"],"names":[],"mappings":"AAAA,cAAc,aAAd","sourcesContent":["export * from \"./LargeText\";\n"]},"metadata":{},"sourceType":"module"}

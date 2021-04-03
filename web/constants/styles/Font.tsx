@@ -64,6 +64,12 @@ export const Typography = createGlobalStyle`
     url("/fonts/dharma/dharma_regular.svg#DharmaGothicCW01-Regular") format("svg"); /* iOS 4.1- */
   }
 
+  .txt-caption {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
   /* Paragraph Styles */
   p {
     font-family: ${Font.Body};

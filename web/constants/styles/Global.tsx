@@ -46,8 +46,8 @@ html {
     padding: 0;
     min-height: 100%;
     overflow: auto;
-    background-color: ${Theme.Color.varBackground};
-    color: ${Theme.Color.varForeground};
+    background-color: ${Theme.Color.White};
+    color: ${Theme.Color.Text};
 
     /* overflow: hidden; */
   }
@@ -79,8 +79,8 @@ html {
     padding-left: 0;
     padding-right: 0;
     padding-bottom: 0;
-    background-color: ${Theme.Color.varBackground};
-    color: ${Theme.Color.varForeground};
+    background-color: ${Theme.Color.White};
+    color: ${Theme.Color.Text};
   }
 
   /**

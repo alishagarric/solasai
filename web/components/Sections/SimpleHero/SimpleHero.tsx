@@ -1,6 +1,8 @@
 // Core
 import React from "react";
 import { Inner } from "../../Inner";
+import { Bird } from "../../_svg/Bird/Bird";
+import { Fire } from "../../_svg/Fire/Fire";
 import { Logotype } from "../../_svg/Logotype/Logotype";
 
 // Styles
@@ -34,9 +36,17 @@ export const SimpleHero: React.FunctionComponent<LMNTS_Section_SimpleHero> = ({
   return (
     <SimpleHeroStyle className={`${SimpleHeroClassName}`}>
       <Inner className={`${SimpleHeroClassName}__inner`}>
-        {headline && <h1>{headline}</h1>}
-        {logo && <Logotype />}
-        {guide_text && <p>{guide_text}</p>}
+        <Bird />
+
+        <div className={`${SimpleHeroClassName}__grid`}>
+          <div className={`${SimpleHeroClassName}__grid__text`}>
+            <Fire />
+            {headline && <h1 className={`${SimpleHeroClassName}__grid__text__headline`}>{headline}</h1>}
+            {logo && <Logotype />}
+          </div>
+
+          {guide_text && <p className={`${SimpleHeroClassName}__grid__guide txt-caption`}><span>{guide_text}</span></p>}
+        </div>
       </Inner>
     </SimpleHeroStyle>
   );

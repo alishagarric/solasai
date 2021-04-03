@@ -1,6 +1,7 @@
 // Core
 import React from "react";
 import { Inner } from "../../Inner";
+import { Bird } from "../../_svg/Bird/Bird";
 
 // Styles
 import {
@@ -28,16 +29,17 @@ export const ArrowModel: React.FunctionComponent<LMNTS_Section_ArrowModel> = ({
 
   return (
     <ArrowModelStyle className={`${ArrowModelClassName}`}>
-      <Inner className={`${ArrowModelClassName}__inner`}>
-        {items.map((item, idx) => {
-          return (
-            <p key={idx}>{item}</p>
-          )
-        })}
-      </Inner>
+      {items.map((item, idx) => {
+        return (
+          <div key={idx} className={`${ArrowModelClassName}__item`}>
+            <p>{item}</p>
+          </div>
+        )
+      })}
     </ArrowModelStyle>
   );
 };
 
 // End Component
 // __________________________________________________________________________________________
+

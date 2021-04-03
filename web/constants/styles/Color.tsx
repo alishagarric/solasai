@@ -30,14 +30,21 @@ export const Color = {
   varForeground: "var(--clrForeground)",
 
   // Core Colors
-  Primary: "#000000",
-  Secondary: "#FFB4A3",
-  Background: "#FFFDEB",
-  Text: "#000000",
+  Primary: "#112635",
+  Secondary: "#D41D00",
+  Background: "#F7F7F7",
+  Text: "#112635",
+
+  //Red Colors
+  Red1: "#D41D00",
+  Red2: "#D50000",
+  Red3: "#C30000",
+  Red4: "#960202",
+  Red5: "#6E0000",
 
   // Grayscale Palette
   Black: "#000000",
-  White: "#FFF6EE",
+  White: "#FFFFFF",
 
 };
 

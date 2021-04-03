@@ -1,8 +1,8 @@
 /**
  *
- * SimpleHero.js/styles.scss.tsx
+ * ArrowModel.js/styles.scss.tsx
  * @author Alisha Garric
- * @description The website SimpleHero Styles. To be used in horizontal loop
+ * @description The website ArrowModel Styles. To be used in horizontal loop
  *
  */
 
@@ -20,13 +20,20 @@ import { Base } from "../../../constants/styles/Base";
 // Begin Styles
 //////////////////////////////////////////////////////////////////////
 
-export const SimpleHeroClassName = `simple-hero`;
+export const ArrowModelClassName = `arrow-model`;
 
-export const SimpleHeroStyle = styled.section`
-  &.${SimpleHeroClassName} {
+export const ArrowModelStyle = styled.section`
+  &.${ArrowModelClassName} {
+
+    p {
+      font-size: 16.5vh;
+    }
 
     @media (max-width: ${Base.Media.Width.Sm + "px"}), (max-width: ${Base.Media.Width.Md + "px"}) and (orientation: landscape) and (max-height: ${Base.Media.Height.Md + "px"}) {
 
+      p {
+        font-size: 9vw;
+      }
     }
   }
 `;

@@ -15,7 +15,7 @@ import Link from "next/link";
 // __________________________________________________________________________________________
 
 export type LMNTS_Section_Button = {
-  link: string;
+  link?: string;
   label: string;
   target?: string;
 };
@@ -33,15 +33,26 @@ export const Button: React.FunctionComponent<LMNTS_Section_Button> = ({
   target
 }) => {
 
-  return (
-    <ButtonStyle className={`${ButtonClassName}`}>
-      <Link href={link}>
-        <a target={target ? target : "_self"} className="txt-caption">
+  if (link){
+    return (
+      <ButtonStyle className={`${ButtonClassName}`}>
+        <Link href={link}>
+          <a target={target ? target : "_self"} className="txt-caption">
+            {label}
+          </a>
+        </Link>
+      </ButtonStyle>
+    );
+  } else {
+    return (
+      <ButtonStyle className={`${ButtonClassName}`}>
+        <div className="txt-caption">
           {label}
-        </a>
-      </Link>
-    </ButtonStyle>
-  );
+        </div>
+      </ButtonStyle>
+    );
+  }
+
 };
 
 // End Component

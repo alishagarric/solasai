@@ -1,1 +1,1 @@
-export * from "./BiColumnIcons";
+export * from "./ColumnIconBlocks";

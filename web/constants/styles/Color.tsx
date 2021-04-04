@@ -42,6 +42,11 @@ export const Color = {
   Red4: "#960202",
   Red5: "#6E0000",
 
+  //Orange Colors
+  Orange1: "#EF9B42",
+  Orange2: "#E98435",
+  Orange3: "#DE4F1A",
+
   // Grayscale Palette
   Black: "#000000",
   White: "#FFFFFF",

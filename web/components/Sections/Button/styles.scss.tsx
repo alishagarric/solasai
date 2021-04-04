@@ -27,8 +27,11 @@ export const ButtonClassName = `btn`;
 export const ButtonStyle = styled.div`
   &.${ButtonClassName} {
     margin-top: calc(${Root.Size} * 2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-    a {
+    a, div {
       padding: ${Root.Size} calc(${Root.Size} * 3);
       color: ${Theme.Color.Secondary};
       border: 1px solid ${Theme.Color.Secondary};

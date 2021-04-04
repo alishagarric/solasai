@@ -34,19 +34,21 @@ export const BracketSection: React.FunctionComponent<LMNTS_Section_BracketSectio
   return (
     <BracketSectionStyle className={`${BracketSectionClassName}`}>
       <Inner>
-        <h2 className={`${BracketSectionClassName}__headline`}>{headline}</h2>
-        {icons && icons.length > 0 &&
-          <div className={`${BracketSectionClassName}__blocks`}>
-            {icons.map((block, idx) => {
-              return (
-                <div key={idx} className={`${BracketSectionClassName}__blocks__block`}>
-                  {block.icon}
-                  {block.label && <p className={`${BracketSectionClassName}__block__label`} >{block.label}</p>}
-                </div>
-              );
-            })}
-          </div>
-        }
+        <div className={`${BracketSectionClassName}__content`}>
+          <h2 className={`${BracketSectionClassName}__headline h5`}>{headline}</h2>
+          {icons && icons.length > 0 &&
+            <div className={`${BracketSectionClassName}__blocks`}>
+              {icons.map((block, idx) => {
+                return (
+                  <div key={idx} className={`${BracketSectionClassName}__blocks__block`}>
+                    {block.icon}
+                    {block.label && <p className={`${BracketSectionClassName}__blocks__block__label p-sm`} >{block.label}</p>}
+                  </div>
+                );
+              })}
+            </div>
+          }
+        </div>
       </Inner>
     </BracketSectionStyle>
   );

@@ -48,7 +48,7 @@ export const SimpleHeroStyle = styled.section`
         width: 100%;
 
         &__headline {
-          max-width: 820px;
+          max-width: 840px;
           margin: calc(${Root.Size} * 2);
         }
       }
@@ -59,7 +59,7 @@ export const SimpleHeroStyle = styled.section`
         display: flex; 
         flex-direction: column;
         align-items: center;
-        margin-top: calc(${Root.Size} * 2);
+        margin-top: calc(${Root.Size} * 3);
 
         &:after {
           content: "";
@@ -68,7 +68,7 @@ export const SimpleHeroStyle = styled.section`
           opacity: 0.5;
           background: ${Theme.Color.Black};
           flex: 1;
-          margin: calc(${Root.Size} * 2);
+          margin: calc(${Root.Size} * 2) 0 calc(${Root.Size} * 3) 0;
         }
       }
     }

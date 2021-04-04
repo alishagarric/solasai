@@ -49,8 +49,12 @@ export const BlurredItemsSectionStyle = styled.section`
       align-items: center;
 
       &__body {
-        padding-left: ${Root.Size} ;
+        padding-left: calc(${Root.Size} * 2) ;
         flex: 4;
+
+        > * {
+          max-width: 310px;
+        }
       }
 
       &__blurred-items {

@@ -3,6 +3,7 @@ import React from "react";
 import { Inner } from "../../Inner";
 import { Bird } from "../../_svg/Bird/Bird";
 import { CircleDecor } from "../../_svg/CircleDecor/CircleDecor";
+import { Anchor } from "../Anchor";
 import { Button } from "../Button";
 
 // Styles
@@ -45,47 +46,50 @@ export const InteractiveCards: React.FunctionComponent<LMNTS_Section_Interactive
 
   return (
     <InteractiveCardsStyle className={`${InteractiveCardsClassName}`}>
+      <Anchor id="how" />
       <Inner>
-        <Bird />
-        <CircleDecor />
-        <h2 className={`${InteractiveCardsClassName}__headline`}>{headline}</h2>
+        <div className={`${InteractiveCardsClassName}__content`}>
+          <Bird />
+          <CircleDecor />
+          <h2 className={`${InteractiveCardsClassName}__headline h3`}>{headline}</h2>
 
-        <div className={`${InteractiveCardsClassName}__header`}>
+          <div className={`${InteractiveCardsClassName}__header`}>
+            {card_sets && card_sets.length > 0 &&
+              <nav className={`${InteractiveCardsClassName}__header__card-sets-nav`}>
+                {card_sets.map((set, idx) => {
+                  return (
+                    <div key={idx} className={`${InteractiveCardsClassName}__header__card-sets-nav__item`}>
+                      <Button label={set.label} />
+                    </div>
+                  );
+                })}
+              </nav>
+            }
+            {cta &&
+              <>{/*<Button link={cta.link} label={cta.label} target={cta.target} />*/}</>
+            }
+          </div>
+
           {card_sets && card_sets.length > 0 &&
-            <nav className={`${InteractiveCardsClassName}__header__card-sets-nav`}>
+            <div className={`${InteractiveCardsClassName}__card-sets`}>
               {card_sets.map((set, idx) => {
                 return (
-                  <div key={idx} className={`${InteractiveCardsClassName}__header__card-sets-nav__item`}>
-                    <Button label={set.label} />
+                  <div key={idx} className={`${InteractiveCardsClassName}__card-sets__cards ${idx == 0 ? "__active" : ""}`}>
+                    {set.cards && set.cards.length > 0 && set.cards.map((card, idxx) => {
+                      return (
+                        <div key={idxx} className={`${InteractiveCardsClassName}__card-sets__cards__card`}>
+                          <div className={`${InteractiveCardsClassName}__card-sets__cards__card__label`}>Step</div>
+                          <div className={`${InteractiveCardsClassName}__card-sets__cards__card__index headline`}>{idxx}</div>
+                          <p>{card.front_text}</p>
+                        </div>
+                      );
+                    })}
                   </div>
                 );
               })}
-            </nav>
-          }
-          {cta &&
-            <>{/*<Button link={cta.link} label={cta.label} target={cta.target} />*/}</>
+            </div>
           }
         </div>
-
-        {card_sets && card_sets.length > 0 &&
-          <div className={`${InteractiveCardsClassName}__card-sets`}>
-            {card_sets.map((set, idx) => {
-              return (
-                <div key={idx} className={`${InteractiveCardsClassName}__card-sets__cards ${idx == 0 ? "__active" : ""}`}>
-                  {set.cards && set.cards.length > 0 && set.cards.map((card, idxx) => {
-                    return (
-                      <div key={idxx} className={`${InteractiveCardsClassName}__card-sets__cards__card`}>
-                        <div className={`${InteractiveCardsClassName}__card-sets__cards__card__label`}>Step</div>
-                        <div className={`${InteractiveCardsClassName}__card-sets__cards__card__index`}>{idxx}</div>
-                        <p>{card.front_text}</p>
-                      </div>
-                    );
-                  })}
-                </div>
-              );
-            })}
-          </div>
-        }
       </Inner>
     </InteractiveCardsStyle>
   );

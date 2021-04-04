@@ -32,7 +32,7 @@ export const WarningSection: React.FunctionComponent<LMNTS_Section_WarningSectio
       <Inner className={`${WarningSectionClassName}__inner`}>
         <div className={`${WarningSectionClassName}__warning-box`}>
           <Warning />
-          <p>{text}</p>
+          <p className="h5">{text}</p>
         </div>
       </Inner>
     </WarningSectionStyle>

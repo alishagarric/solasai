@@ -36,7 +36,7 @@ export const ColumnIconBlocksStyle = styled.div`
       align-items: center;
       text-align: center;
       flex: 0 0 50%;
-      padding: 0 ${Root.Size} var(--verticalSpace) ${Root.Size};
+      padding: 0 calc(${Root.Size} * 2) var(--verticalSpace) calc(${Root.Size} * 2);
 
       &__label {
         padding-top: ${Root.Size};

@@ -36,7 +36,7 @@ export const ColumnIconBlocks: React.FunctionComponent<LMNTS_Section_ColumnIconB
           return (
             <div key={idx} className={`${ColumnIconBlocksClassName}__block`}>
               {block.icon}
-              {block.label && <p className={`${ColumnIconBlocksClassName}__block__label`} >{block.label}</p>}
+              {block.label && <p className={`${ColumnIconBlocksClassName}__block__label p-sm`} >{block.label}</p>}
             </div>
           );
         })

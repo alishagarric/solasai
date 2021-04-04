@@ -31,42 +31,46 @@ export const BulletedSectionStyle = styled.section`
     margin-top: calc(${Root.Size} * 4);
     margin-bottom: calc(${Root.Size} * 4);
 
-    .${BulletedSectionClassName}__headline {
-      padding-bottom: calc(${Root.Size} * 1.5);
-    }
+    .${BulletedSectionClassName}__container {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
 
-    .${BulletedSectionClassName}__content {
-      display: flex;
-      flex-direction: row;
-
-      &__body, &__children {
-        flex: 1;
+      .${BulletedSectionClassName}__headline {
+        padding-bottom: calc(${Root.Size} * 1.5);
       }
 
-      &__body {
-        &__html {
-          padding-bottom: calc(${Root.Size} * 1.5);
+      .${BulletedSectionClassName}__content {
+        display: flex;
+        flex-direction: row;
+
+        &__body, &__children {
+          flex: 1;
         }
 
-        &__bullets {
-          li {
-            display: flex;
-            align-items: flex-start;
-            padding-bottom: ${Root.Size};
+        &__body {
+          &__html {
+            padding-bottom: calc(${Root.Size} * 1.5);
+          }
 
-            .${CheckmarkClassName} {
-              margin-right: calc(${Root.Size} / 2);
-              flex: 0 0 22px;
+          &__bullets {
+            li {
+              display: flex;
+              align-items: flex-start;
+              padding-bottom: ${Root.Size};
+
+              .${CheckmarkClassName} {
+                margin-right: calc(${Root.Size} / 2);
+                flex: 0 0 22px;
+              }
             }
           }
-        }
 
-        + .${BulletedSectionClassName}__content__children {
-          margin-left: calc(${Root.Size} * 3);
+          + .${BulletedSectionClassName}__content__children {
+            margin-left: calc(${Root.Size} * 3);
+          }
         }
       }
-
-
     }
 
     

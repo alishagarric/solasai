@@ -33,7 +33,9 @@ export const SiteHead = ({ title = "This is the default title" }: SiteHead) => {
       <meta name="mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
 
+      {/* Fonts and styles */}
       <link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" />
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
     </Head>
   );
 };

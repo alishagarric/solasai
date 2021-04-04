@@ -33,9 +33,9 @@ export const OffsetImageSectionStyle = styled.section`
     background-color: ${Theme.Color.White};
 
     .${OffsetImageSectionClassName}__headline {
-      padding: calc(${Root.Size} * 1.5) 0 ${Root.Size} 0;
-      width: 70%;
-      margin-left: 30%;
+      padding: calc(${Root.Size} * 1.5) 0 calc(${Root.Size} * 2) 0;
+      width: 60%;
+      margin-left: 40%;
       position: relative;
       z-index: 3;
     }
@@ -44,11 +44,13 @@ export const OffsetImageSectionStyle = styled.section`
       display: flex;
       flex-direction: row;
       justify-content: flex-end;
+      width: 100%;
 
       &__children {
         flex: 0 0 50%;
         position: relative;
         z-index: 2;
+        padding-right: 10%;
       }
 
       &__image {

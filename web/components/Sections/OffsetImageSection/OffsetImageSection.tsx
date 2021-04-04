@@ -6,6 +6,7 @@ import { Bird } from "../../_svg/Bird/Bird";
 import { Checkmark } from "../../_svg/Checkmark/Checkmark";
 import { Fire } from "../../_svg/Fire/Fire";
 import { Logotype } from "../../_svg/Logotype/Logotype";
+import { Anchor } from "../Anchor";
 
 // Styles
 import {
@@ -38,8 +39,9 @@ export const OffsetImageSection: React.FunctionComponent<LMNTS_Section_OffsetIma
 
   return (
     <OffsetImageSectionStyle className={`${OffsetImageSectionClassName}`}>
+      <Anchor id="product" />
       <Inner className={`${OffsetImageSectionClassName}__inner`}>
-        {headline && <h2 className={`${OffsetImageSectionClassName}__headline`}>{headline}</h2>}
+        {headline && <h2 className={`${OffsetImageSectionClassName}__headline h3`}>{headline}</h2>}
 
         <div className={`${OffsetImageSectionClassName}__content`}>
           <div className={`${OffsetImageSectionClassName}__content__image`}>

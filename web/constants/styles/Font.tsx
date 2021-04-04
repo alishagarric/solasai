@@ -7,34 +7,9 @@ import { createGlobalStyle } from "styled-components";
 import { Base } from "./Base";
 
 export const Font = {
-  Body: `'Neuefile Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
-  Code: `"Dank Mono", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace`,
-  Header: `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
-  // Header: `"Cera Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
-  // Body: `"Brown", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
-  // Code: `"SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace`,
-  Size: {
-    Sm: "1rem",
-    Md: "1rem",
-    Lg: "1rem",
-    ViewWidth: {
-      Sm: "6.8vw",
-      Md: "5.2vw",
-      Lg: "1.2vw",
-    },
-    ViewHeight: {
-      Sm: "6.8vh",
-      Md: "5.2vh",
-      Lg: "2vh",
-    },
-  },
-  Icon: {
-    Size: {
-      Sm: "8.5vw",
-      Md: "8.5vw",
-      Lg: "1.7vw",
-    },
-  },
+  Body: `'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+  Code: `'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+  Header: `'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
 };
 
 // Global Type Styles
@@ -54,18 +29,21 @@ export const Typography = createGlobalStyle`
     font-variant-numeric: proportional-nums;
   }
 
+  /*
   @font-face {
     font-family: "dharma";
-    src: url("/fonts/dharma/dharma_regular.eot"); /* IE9*/
-    src: url("/fonts/dharma/dharma_regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-    url("/fonts/dharma/dharma_regular.woff2") format("woff2"), /* chrome firefox */
-    url("/fonts/dharma/dharma_regular.woff") format("woff"), /* chrome firefox */
-    url("/fonts/dharma/dharma_regular.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
-    url("/fonts/dharma/dharma_regular.svg#DharmaGothicCW01-Regular") format("svg"); /* iOS 4.1- */
+    src: url("/fonts/dharma/dharma_regular.eot");
+    src: url("/fonts/dharma/dharma_regular.eot?#iefix") format("embedded-opentype"), 
+    url("/fonts/dharma/dharma_regular.woff2") format("woff2"), 
+    url("/fonts/dharma/dharma_regular.woff") format("woff"), 
+    url("/fonts/dharma/dharma_regular.ttf") format("truetype"),
+    url("/fonts/dharma/dharma_regular.svg#DharmaGothicCW01-Regular") format("svg");
   }
+  */
 
   .txt-caption {
     font-size: 1rem;
+    font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
   }
@@ -73,32 +51,25 @@ export const Typography = createGlobalStyle`
   /* Paragraph Styles */
   p {
     font-family: ${Font.Body};
-    font-size: 1rem;
+    font-size: 1.25rem;
     font-weight: 500;
-    line-height: 1.4;
+    line-height: 1.45;
     letter-spacing: -0.2px;
     padding-bottom: calc(var(--Size) / 3.5);
-
-    &.lead {
-      font-size: 1.4rem;
-      @media (max-width: ${Base.Media.Width.Md + "px"}) {
-        font-size: 1.2rem;
-      }
-    }
   }
 
   .p-sm {
     font-family: ${Font.Body};
-    line-height: 1.2;
+    line-height: 1.45;
     font-size: 0.9rem;
-    letter-spacing: -0.2px;
+    letter-spacing: 0px;
   }
 
   .p-lg {
     font-family: ${Font.Body};
-    line-height: 1.4;
-    font-size: 1.2rem;
-    letter-spacing: -0.2px;
+    line-height: 1.45;
+    font-size: 1.375rem;
+    letter-spacing: 0px;
   }
 
   /* Header Styles */
@@ -111,44 +82,44 @@ export const Typography = createGlobalStyle`
   }
 
   h1, .h1 {
-    font-size: 4rem;
+    font-size: 3.8rem;
     @media (max-width: ${Base.Media.Width.Md + "px"}) {
       font-size: 2.4rem;
     }
   }
   h2, .h2 {
-    font-size: 3rem;
+    font-size: 2.75rem;
     @media (max-width: ${Base.Media.Width.Md + "px"}) {
       font-size: 2.1rem;
     }
   }
   h3, .h3 {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     @media (max-width: ${Base.Media.Width.Md + "px"}) {
       font-size: 2rem;
     }
   }
   h4, .h4 {
-    font-size: 2rem;
+    font-size: 1.75rem;
     @media (max-width: ${Base.Media.Width.Md + "px"}) {
       font-size: 1.8rem;
     }
   }
   h5, .h5 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     @media (max-width: ${Base.Media.Width.Md + "px"}) {
       font-size: 1.4rem;
     }
   }
   h6, .h6 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     @media (max-width: ${Base.Media.Width.Md + "px"}) {
       font-size: 1.1rem;
     }
   }
 
   .headline {
-    font-size: 7.25rem;
+    font-size: 5.625rem;
     @media (max-width: ${Base.Media.Width.Md + "px"}) {
       font-size: 4rem;
     }
@@ -157,5 +128,5 @@ export const Typography = createGlobalStyle`
     }
   }
 
-  h1, h2, h3, h4, h5, h6, p, .heading-padding { padding-bottom: calc(var(--Size) / 3.5); }
+  h1, h2, h3, h4, h5, h6, p, .heading-padding { padding-bottom: calc(var(--Size)); }
 `;

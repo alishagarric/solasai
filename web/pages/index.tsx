@@ -18,6 +18,7 @@ import { MagnifyingGlass } from "../components/_svg/Icons/MagnifyingGlass";
 import { WarningSection } from "../components/Sections/WarningSection";
 import { InteractiveCards } from "../components/Sections/InteractiveCards";
 import { SplitSection } from "../components/Sections/SplitSection";
+import { TestimonialsSlider } from "../components/Sections/TestimonialsSlider";
 
 // Begin Component
 // __________________________________________________________________________________________
@@ -100,7 +101,7 @@ const HomePage: NextPage<HomePage> = () => {
 
       <BulletedSection 
         headline="Why does your business need a robust model fairness pipeline?"
-        body={{__html: "<p>Multiple forces are converging.</p><p>Enterprises must gain deep insight into their predictive models.</p>"}}
+        body={{__html: `<p class="p-lg">Multiple forces are converging.</p><p class="p-lg">Enterprises must gain deep insight into their predictive models.</p>`}}
         bullets={[
           "Test for discrimination",
           "Identify opportunities to improve fairness",
@@ -129,7 +130,7 @@ const HomePage: NextPage<HomePage> = () => {
       <PuzzleSection 
         headline="Why SolasAI Is Different"
         sub_headline="SolasAI goes beyond Data Science"
-        body={{__html: "We approach the problem from multiple sides, and which makes us a one-stop shop for fairer model reconstruction."}}
+        body={{__html: "<p>We approach the problem from multiple sides, and which makes us a one-stop shop for fairer model reconstruction.</p>"}}
         puzzle_pieces={[
           "Business Needs",
           "Data Science & Technology",
@@ -139,7 +140,7 @@ const HomePage: NextPage<HomePage> = () => {
       />
 
       <BlurredItemsSection 
-        body={{__html: "Competitors focus on one area of expertise, which leaves other important areas overlooked"}}
+        body={{__html: "<p>Competitors focus on one area of expertise, which leaves other important areas overlooked</p>"}}
         focus_text="Data Science & Technology"
         blurred_text="Business Needs"
       />
@@ -149,13 +150,33 @@ const HomePage: NextPage<HomePage> = () => {
         icons={[
           { icon: <MagnifyingGlass/>, label: "Configurable Business Rules and Objectives" },
           { icon: <MagnifyingGlass/>, label: "Optimized, Fast, & Fair Search" },
-          { icon: <MagnifyingGlass/>, label: "CRegulatory Expertise" },
+          { icon: <MagnifyingGlass/>, label: "Regulatory Expertise" },
           { icon: <MagnifyingGlass/>, label: "Explainable AI" },
         ]}
       />
 
       <WarningSection text="We don’t set out with the intention of reinventing or replacing your modeling process. We are not trying to be AutoML" />
-      <SplitSection />
+      <SplitSection 
+        headline={{__html: "<h3><strong>SolasAI</strong> was created by industry-leading consultants and data scientists</h3>"}}
+        text_blocks={[
+          {label: "45 Years", text: "in Employment Discrimination Analytics" },
+          {label: "25 Years", text: "in Fair Lending Analytics" },
+          {label: "Fortune 50", text: "we advise over 50% of these companies" },
+          {label: "Trusted Fair Lending", text: "used by virtually every major lending institution in the U.S" },
+          {label: "Expert Consultants", text: "to numerous Federal, State, and Local Regulators" }
+        ]}
+        image="https://source.unsplash.com/1600x900/?tech"
+        alt="We don’t set out with the intention of reinventing or replacing your modeling process."
+      />
+
+      <TestimonialsSlider 
+        headline="Who We’ve Helped"
+        testimonials= {[
+          {testimonial: "SolasAI achieved 50% decrease in a model’s gender and race disparities while seeing only a small, but acceptable, loss in model performance.", author: "Fintech, Client"},
+          {testimonial: "SolasAI achieved 50% decrease in a model’s gender and race disparities while seeing only a small, but acceptable, loss in model performance.", author: "Fintech, Client"},
+          {testimonial: "SolasAI achieved 50% decrease in a model’s gender and race disparities while seeing only a small, but acceptable, loss in model performance.", author: "Fintech, Client"},
+        ]}
+      />
     </div>
   );
 };

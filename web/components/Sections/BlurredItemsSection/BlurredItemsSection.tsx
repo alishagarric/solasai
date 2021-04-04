@@ -47,10 +47,10 @@ export const BlurredItemsSection: React.FunctionComponent<LMNTS_Section_BlurredI
         <div className={`${BlurredItemsSectionClassName}__content`}>
 
           <div className={`${BlurredItemsSectionClassName}__content__blurred-items`}>
-            <p className={`${BlurredItemsSectionClassName}__content__blurred-items__focused`}>
+            <p className={`${BlurredItemsSectionClassName}__content__blurred-items__focused p-lg`}>
               <span>{focus_text}</span>
             </p>
-            <p className={`${BlurredItemsSectionClassName}__content__blurred-items__blurred`}>
+            <p className={`${BlurredItemsSectionClassName}__content__blurred-items__blurred p-lg`}>
               <span>{blurred_text}</span>
             </p>
           </div>

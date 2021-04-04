@@ -48,7 +48,7 @@ export const CtaRow: React.FunctionComponent<LMNTS_Section_CtaRow> = ({
 
       <Inner className={`${CtaRowClassName}__inner`}>
         <div className={`${CtaRowClassName}__content`}>
-          {headline && <h2>{headline}</h2>}
+          {headline && <h2 className="h3">{headline}</h2>}
           {cta &&
             <Button link={cta.link} label={cta.label} target={cta.target} />
           }

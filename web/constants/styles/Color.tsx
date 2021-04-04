@@ -49,6 +49,7 @@ export const Color = {
 
   // Grayscale Palette
   Black: "#000000",
+  Grey: "#ADADAD",
   White: "#FFFFFF",
 
 };

@@ -99,11 +99,6 @@ export const RootVariables = createGlobalStyle`
     /* -------- Base Measurement */
     --Size: ${Theme.Base.Size.Lg};
 
-    /* -------- Font Sizes (Viewport) */
-    --ViewWidthFontSize: ${Theme.Font.Size.ViewWidth.Lg};
-    --ViewHeightFontSize: ${Theme.Font.Size.ViewHeight.Lg};
-    --IconSize: ${Theme.Font.Icon.Size.Lg};
-
     /* -------- Root Element Measurement */
     --REM: ${Theme.Base.Rem.Lg};
 
@@ -143,11 +138,6 @@ export const RootVariables = createGlobalStyle`
         /* -------- Base Measurement */
         --Size: ${Theme.Base.Size.Md};
 
-        /* -------- Font Sizes (Viewport) */
-        --ViewWidthFontSize: ${Theme.Font.Size.ViewWidth.Md};
-        --ViewHeightFontSize: ${Theme.Font.Size.ViewHeight.Md};
-        --IconSize: ${Theme.Font.Icon.Size.Md};
-
         /* -------- Root Element Measurement */
         --REM: ${Theme.Base.Rem.Md};
 
@@ -181,11 +171,6 @@ export const RootVariables = createGlobalStyle`
 
         /* -------- Base Measurement */
         --Size: ${Theme.Base.Size.Sm};
-
-        /* -------- Font Sizes (Viewport) */
-        --ViewWidthFontSize: ${Theme.Font.Size.ViewWidth.Sm};
-        --ViewHeightFontSize: ${Theme.Font.Size.ViewHeight.Sm};
-        --IconSize: ${Theme.Font.Icon.Size.Sm};
 
         /* -------- Root Element Measurement */
         --Rem: ${Theme.Base.Rem.Sm};

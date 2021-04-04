@@ -30,51 +30,59 @@ export const BracketSectionStyle = styled.section`
     margin-top: calc(${Root.Size} * 4);
     margin-bottom: calc(${Root.Size} * 4);
 
-    .${BracketSectionClassName}__headline {
-      text-align: center;
-      padding-bottom: calc(${Root.Size} * 1.5);
-    }
+    .${BracketSectionClassName}__content {
+      margin-left: auto;
+      margin-right: auto;
 
-    .${BracketSectionClassName}__blocks {
-      display: flex;
-      flex-wrap: wrap;
-      border-top: 1px solid ${Theme.Color.Text};
-      position: relative;
-      margin: calc(${Root.Size} * 1.5) auto 0 auto;
-
-      &:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        height: calc(${Root.Size} * 2);
-        left: 0;
-        right: 0;
-        border-left: 1px solid ${Theme.Color.Text};
-        border-right: 1px solid ${Theme.Color.Text};
-        pointer-events: none;
-      }
-
-      &:before {
-        content: "";
-        position: absolute;
-        width: 1px;
-        height: var(--verticalLineHeight);
-        background-color: ${Theme.Color.Text};
-        left: 50%;
-        top: 0;
-        transform: translate(-50%, -100%);
-      }
-
-      &__block {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+      .${BracketSectionClassName}__headline {
         text-align: center;
-        flex: 0 0 25%;
-        padding: calc(${Root.Size} * 1.5) ${Root.Size} 0 ${Root.Size};
+        padding-bottom: calc(${Root.Size} * 1.5);
+        max-width: 410px;
+        margin-left: auto;
+        margin-right: auto;
+      }
 
-        &__label {
-          padding-top: ${Root.Size};
+      .${BracketSectionClassName}__blocks {
+        display: flex;
+        flex-wrap: wrap;
+        border-top: 1px solid ${Theme.Color.Text};
+        position: relative;
+        margin: calc(${Root.Size} * 1.5) auto 0 auto;
+
+        &:after {
+          content: "";
+          position: absolute;
+          top: 0;
+          height: calc(${Root.Size} * 2);
+          left: 0;
+          right: 0;
+          border-left: 1px solid ${Theme.Color.Text};
+          border-right: 1px solid ${Theme.Color.Text};
+          pointer-events: none;
+        }
+
+        &:before {
+          content: "";
+          position: absolute;
+          width: 1px;
+          height: var(--verticalLineHeight);
+          background-color: ${Theme.Color.Text};
+          left: 50%;
+          top: 0;
+          transform: translate(-50%, -100%);
+        }
+
+        &__block {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          flex: 0 0 25%;
+          padding: calc(${Root.Size} * 1.5) ${Root.Size} 0 ${Root.Size};
+
+          &__label {
+            padding-top: ${Root.Size};
+          }
         }
       }
     }

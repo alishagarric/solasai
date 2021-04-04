@@ -5,6 +5,7 @@ import { Bird } from "../../_svg/Bird/Bird";
 import { Checkmark } from "../../_svg/Checkmark/Checkmark";
 import { Fire } from "../../_svg/Fire/Fire";
 import { Logotype } from "../../_svg/Logotype/Logotype";
+import { Anchor } from "../Anchor";
 
 // Styles
 import {
@@ -39,27 +40,30 @@ export const BulletedSection: React.FunctionComponent<LMNTS_Section_BulletedSect
 
   return (
     <BulletedSectionStyle className={`${BulletedSectionClassName}`}>
-      <Inner className={`${BulletedSectionClassName}__inner`}>
-        {headline && <h2 className={`${BulletedSectionClassName}__headline`}>{headline}</h2>}
+      <Anchor id="why-now" />
+      <Inner>
+        <div className={`${BulletedSectionClassName}__container`}>
+          {headline && <h2 className={`${BulletedSectionClassName}__headline h3`}>{headline}</h2>}
 
-        <div className={`${BulletedSectionClassName}__content`}>
-          <div className={`${BulletedSectionClassName}__content__body`}>
-            {body && <div className={`${BulletedSectionClassName}__content__body__html`} dangerouslySetInnerHTML={body}/>}
-            {bullets && bullets.length > 0 && 
-              <ul className={`${BulletedSectionClassName}__content__body__bullets`}>
-                {bullets.map((bullet, idx) => {
-                  return (
-                    <li>
-                      <Checkmark />
-                      <p>{bullet}</p>
-                    </li>
-                  )
-                })}
-              </ul>
-            }
-          </div>
-          <div className={`${BulletedSectionClassName}__content__children`}>
-            {children}
+          <div className={`${BulletedSectionClassName}__content`}>
+            <div className={`${BulletedSectionClassName}__content__body`}>
+              {body && <div className={`${BulletedSectionClassName}__content__body__html`} dangerouslySetInnerHTML={body}/>}
+              {bullets && bullets.length > 0 && 
+                <ul className={`${BulletedSectionClassName}__content__body__bullets`}>
+                  {bullets.map((bullet, idx) => {
+                    return (
+                      <li>
+                        <Checkmark />
+                        <p className="p-lg">{bullet}</p>
+                      </li>
+                    )
+                  })}
+                </ul>
+              }
+            </div>
+            <div className={`${BulletedSectionClassName}__content__children`}>
+              {children}
+            </div>
           </div>
         </div>
       </Inner>

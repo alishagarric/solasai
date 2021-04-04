@@ -2,6 +2,7 @@
 import React from "react";
 import { Inner } from "../../Inner";
 import { Bird } from "../../_svg/Bird/Bird";
+import { CircleDecor } from "../../_svg/CircleDecor/CircleDecor";
 import { Button } from "../Button";
 
 // Styles
@@ -46,6 +47,7 @@ export const InteractiveCards: React.FunctionComponent<LMNTS_Section_Interactive
     <InteractiveCardsStyle className={`${InteractiveCardsClassName}`}>
       <Inner>
         <Bird />
+        <CircleDecor />
         <h2 className={`${InteractiveCardsClassName}__headline`}>{headline}</h2>
 
         <div className={`${InteractiveCardsClassName}__header`}>
@@ -69,12 +71,12 @@ export const InteractiveCards: React.FunctionComponent<LMNTS_Section_Interactive
           <div className={`${InteractiveCardsClassName}__card-sets`}>
             {card_sets.map((set, idx) => {
               return (
-                <div key={idx} className={`${InteractiveCardsClassName}__card-sets__cards`}>
+                <div key={idx} className={`${InteractiveCardsClassName}__card-sets__cards ${idx == 0 ? "__active" : ""}`}>
                   {set.cards && set.cards.length > 0 && set.cards.map((card, idxx) => {
                     return (
                       <div key={idxx} className={`${InteractiveCardsClassName}__card-sets__cards__card`}>
-                        <div>Step</div>
-                        <div>{idxx}</div>
+                        <div className={`${InteractiveCardsClassName}__card-sets__cards__card__label`}>Step</div>
+                        <div className={`${InteractiveCardsClassName}__card-sets__cards__card__index`}>{idxx}</div>
                         <p>{card.front_text}</p>
                       </div>
                     );

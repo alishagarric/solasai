@@ -15,6 +15,7 @@ import { Root } from "../../../constants/Root";
 import { Base } from "../../../constants/styles/Base";
 import { Theme } from "../../../constants/Theme";
 import { BirdClassName } from "../../_svg/Bird/Bird";
+import { CircleDecorClassName } from "../../_svg/CircleDecor/CircleDecor";
 import { ButtonClassName } from "../Button/styles.scss";
 
 // Constants
@@ -29,12 +30,32 @@ export const InteractiveCardsClassName = `interactive-cards`;
 export const InteractiveCardsStyle = styled.section`
   &.${InteractiveCardsClassName} {
     position: relative;
+    background: ${Theme.Color.Background};
+    padding-top: calc(${Root.Size} * 4);
+    padding-bottom: calc(${Root.Size} * 4);
+    overflow: hidden;
 
     .${BirdClassName} {
       position: absolute;
       right: 0;
-      top: 25%;
+      top: 50%;
+      height: 90%;
+      width: auto;
       z-index: 0;
+      transform: translate(50%, -50%);
+    }
+
+    .${CircleDecorClassName} {
+      position: absolute;
+      bottom:  0;
+      left: 0;
+      z-index: 0;
+      width: 50%;
+      height: auto;
+    }
+
+    .${InteractiveCardsClassName}__headline {
+      padding-bottom: calc(${Root.Size} * 1.5);
     }
 
     .${InteractiveCardsClassName}__header {
@@ -43,13 +64,92 @@ export const InteractiveCardsStyle = styled.section`
       align-items: center;
       position: relative;
       z-index: 1;
+      padding-bottom: calc(${Root.Size} * 1.5);
 
       &__card-sets-nav {
         display: flex;
 
-        .${ButtonClassName} div {
-          padding-left: ${Root.Size};
-          padding-right: ${Root.Size};
+        .${ButtonClassName} {
+          margin-top: 0;
+          margin-right: ${Root.Size};
+
+          div {
+            padding-left: ${Root.Size};
+            padding-right: ${Root.Size};  
+          }
+        }
+      }
+    }
+
+    .${InteractiveCardsClassName}__card-sets {
+      width: 100%;
+
+      &__cards {
+        display: none;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: calc(${Root.Size} * 3);
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        
+        &__card {
+          background: ${Theme.Color.White};
+          aspect-ratio: 1;
+          position: relative;
+          padding: calc(${Root.Size} / 2) calc(${Root.Size} * 2) calc(${Root.Size}) calc(${Root.Size});
+
+          &__label {
+            opacity: 0.5;
+          }
+
+          &__index {
+            font-size: 4rem;
+          }
+
+          &:after {
+            content: "";
+            position: absolute;
+            height: 19px;
+            width: 19px;
+            background: ${Theme.Color.Secondary};
+            opacity: 0.43;
+          }
+
+          &:nth-of-type(1):after, &:nth-of-type(3):after {
+            top: 50%;
+            left: calc(100% + calc(${Root.Size} * 1.5));
+            transform: translate(-50%, -50%);
+          }
+
+          &:nth-of-type(2):after, &:nth-of-type(4):after {
+            left: calc(${Root.Size} * 1.5);
+            top: calc(100% + calc(${Root.Size} * 1.5));
+            transform: translate(-50%, -50%);
+          }
+
+          &:last-of-type:after {
+            content: none;
+          }
+
+          &:nth-of-type(3){
+            grid-row: 2 / 3;
+            grid-column: 2 / 3;
+          }
+
+          &:nth-of-type(4){
+            grid-row: 2 / 3;
+            grid-column: 3 / 4;
+          }
+
+          &:nth-of-type(5){
+            grid-row: 3 / 4;
+            grid-column: 3 / 4;
+          }
+
+        }
+
+        &.__active {
+          display: grid;
         }
       }
     }

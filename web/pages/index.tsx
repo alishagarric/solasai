@@ -17,6 +17,7 @@ import { BracketSection } from "../components/Sections/BracketSection";
 import { MagnifyingGlass } from "../components/_svg/Icons/MagnifyingGlass";
 import { WarningSection } from "../components/Sections/WarningSection";
 import { InteractiveCards } from "../components/Sections/InteractiveCards";
+import { SplitSection } from "../components/Sections/SplitSection";
 
 // Begin Component
 // __________________________________________________________________________________________
@@ -39,6 +40,23 @@ const HomePage: NextPage<HomePage> = () => {
         guide_text="Learn More" 
         logo={true}
       />
+
+      <OffsetImageSection 
+        image="/img/graph.png"
+        alt={"Understand and Resolve Disparity while Preserving Predictive Value of Your Model"}
+        headline={"Understand and Resolve Disparity while Preserving Predictive Value of Your Model"}
+      >
+        <ColumnIconBlocks 
+          icons={[
+            { icon: <Illuminate/>, label: "Illuminate drivers of discrimination" },
+            { icon: <Illuminate/>, label: "Illuminate drivers of discrimination" },
+            { icon: <Illuminate/>, label: "Clarify drivers of predictive value" },
+            { icon: <Illuminate/>, label: "Auto-generate fairer alternatives" },
+          ]}
+        />
+        <Button label="Download Whitepaper" link="/" />
+      </OffsetImageSection>
+
 
       <InteractiveCards 
         headline="How The SolasAI Platform Works"
@@ -79,22 +97,6 @@ const HomePage: NextPage<HomePage> = () => {
           }
         ]}
       />
-
-      <OffsetImageSection 
-        image="/img/graph.png"
-        alt={"Understand and Resolve Disparity while Preserving Predictive Value of Your Model"}
-        headline={"Understand and Resolve Disparity while Preserving Predictive Value of Your Model"}
-      >
-        <ColumnIconBlocks 
-          icons={[
-            { icon: <Illuminate/>, label: "Illuminate drivers of discrimination" },
-            { icon: <Illuminate/>, label: "Illuminate drivers of discrimination" },
-            { icon: <Illuminate/>, label: "Clarify drivers of predictive value" },
-            { icon: <Illuminate/>, label: "Auto-generate fairer alternatives" },
-          ]}
-        />
-        <Button label="Download Whitepaper" link="/" />
-      </OffsetImageSection>
 
       <BulletedSection 
         headline="Why does your business need a robust model fairness pipeline?"
@@ -153,6 +155,7 @@ const HomePage: NextPage<HomePage> = () => {
       />
 
       <WarningSection text="We don’t set out with the intention of reinventing or replacing your modeling process. We are not trying to be AutoML" />
+      <SplitSection />
     </div>
   );
 };

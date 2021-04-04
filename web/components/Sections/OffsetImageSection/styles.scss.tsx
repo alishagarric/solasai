@@ -30,6 +30,7 @@ export const OffsetImageSectionStyle = styled.section`
     position: relative;
     margin-top: calc(${Root.Size} * 4);
     margin-bottom: calc(${Root.Size} * 4);
+    background-color: ${Theme.Color.White};
 
     .${OffsetImageSectionClassName}__headline {
       padding: calc(${Root.Size} * 1.5) 0 ${Root.Size} 0;

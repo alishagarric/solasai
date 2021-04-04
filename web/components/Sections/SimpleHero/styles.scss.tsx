@@ -14,6 +14,7 @@ import styled, { keyframes } from "styled-components";
 import { Root } from "../../../constants/Root";
 import { Base } from "../../../constants/styles/Base";
 import { Theme } from "../../../constants/Theme";
+import { BirdClassName } from "../../_svg/Bird/Bird";
 
 // Constants
 
@@ -72,10 +73,11 @@ export const SimpleHeroStyle = styled.section`
       }
     }
 
-    .svg-bird {
+    .${BirdClassName} {
       position: absolute;
       top: 0;
-      bottom: 0;
+      height: 100%;
+      width: auto;
       left: 50%;
       transform: translateX(-50%);
       z-index: 0;

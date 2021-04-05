@@ -14,7 +14,7 @@ import styled, { keyframes } from "styled-components";
 import { Root } from "../../../constants/Root";
 import { Base } from "../../../constants/styles/Base";
 import { Theme } from "../../../constants/Theme";
-import { CheckmarkClassName } from "../../_svg/Checkmark/Checkmark";
+import { CheckmarkClassName } from "../../_svg/Icons/Checkmark";
 
 // Constants
 
@@ -62,6 +62,7 @@ export const BulletedSectionStyle = styled.section`
               .${CheckmarkClassName} {
                 margin-right: calc(${Root.Size} / 2);
                 flex: 0 0 22px;
+                transform: translateY(50%);
               }
             }
           }

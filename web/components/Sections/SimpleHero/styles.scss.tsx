@@ -14,7 +14,7 @@ import styled, { keyframes } from "styled-components";
 import { Root } from "../../../constants/Root";
 import { Base } from "../../../constants/styles/Base";
 import { Theme } from "../../../constants/Theme";
-import { BirdClassName } from "../../_svg/Bird/Bird";
+import { BirdClassName } from "../../_svg/Birds/Bird";
 
 // Constants
 

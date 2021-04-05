@@ -2,10 +2,6 @@
 import React from "react";
 import LazyImage from "../../../utils/lazyImage";
 import { Inner } from "../../Inner";
-import { Bird } from "../../_svg/Bird/Bird";
-import { Checkmark } from "../../_svg/Checkmark/Checkmark";
-import { Fire } from "../../_svg/Fire/Fire";
-import { Logotype } from "../../_svg/Logotype/Logotype";
 import { Anchor } from "../Anchor";
 
 // Styles

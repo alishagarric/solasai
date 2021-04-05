@@ -1,6 +1,5 @@
 // Core
 import React from "react";
-import { Inner } from "../../Inner";
 
 // Styles
 import {

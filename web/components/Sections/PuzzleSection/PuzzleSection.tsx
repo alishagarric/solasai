@@ -1,10 +1,7 @@
 // Core
 import React from "react";
 import { Inner } from "../../Inner";
-import { Bird } from "../../_svg/Bird/Bird";
-import { Checkmark } from "../../_svg/Checkmark/Checkmark";
-import { Fire } from "../../_svg/Fire/Fire";
-import { Logotype } from "../../_svg/Logotype/Logotype";
+import { Fire } from "../../_svg/Icons/Fire";
 import { Puzzle } from "../../_svg/Puzzle/Puzzle";
 import { Anchor } from "../Anchor";
 

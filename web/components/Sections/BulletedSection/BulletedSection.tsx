@@ -1,10 +1,7 @@
 // Core
 import React from "react";
 import { Inner } from "../../Inner";
-import { Bird } from "../../_svg/Bird/Bird";
-import { Checkmark } from "../../_svg/Checkmark/Checkmark";
-import { Fire } from "../../_svg/Fire/Fire";
-import { Logotype } from "../../_svg/Logotype/Logotype";
+import { Checkmark } from "../../_svg/Icons/Checkmark";
 import { Anchor } from "../Anchor";
 
 // Styles
@@ -52,7 +49,7 @@ export const BulletedSection: React.FunctionComponent<LMNTS_Section_BulletedSect
                 <ul className={`${BulletedSectionClassName}__content__body__bullets`}>
                   {bullets.map((bullet, idx) => {
                     return (
-                      <li>
+                      <li key={idx}>
                         <Checkmark />
                         <p className="p-lg">{bullet}</p>
                       </li>

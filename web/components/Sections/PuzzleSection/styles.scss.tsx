@@ -14,8 +14,8 @@ import styled, { keyframes } from "styled-components";
 import { Root } from "../../../constants/Root";
 import { Base } from "../../../constants/styles/Base";
 import { Theme } from "../../../constants/Theme";
-import { CheckmarkClassName } from "../../_svg/Checkmark/Checkmark";
-import { FireClassName } from "../../_svg/Fire/Fire";
+import { CheckmarkClassName } from "../../_svg/Icons/Checkmark";
+import { FireClassName } from "../../_svg/Icons/Fire";
 import { PuzzleClassName } from "../../_svg/Puzzle/Puzzle";
 
 // Constants

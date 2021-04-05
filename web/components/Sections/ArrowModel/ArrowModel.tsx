@@ -1,7 +1,5 @@
 // Core
 import React from "react";
-import { Inner } from "../../Inner";
-import { Bird } from "../../_svg/Bird/Bird";
 
 // Styles
 import {

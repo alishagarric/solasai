@@ -1,7 +1,6 @@
 // Core
 import React from "react";
 import { Inner } from "../../Inner";
-import { Bird } from "../../_svg/Bird/Bird";
 
 // Styles
 import {
@@ -10,11 +9,8 @@ import {
 } from "./styles.scss";
 
 //Components
-import Link from "next/link";
-import { RedBird } from "../../_svg/RedBird/RedBird";
-import { Button } from "../Button";
 import LazyImage from "../../../utils/lazyImage";
-import { Fire } from "../../_svg/Fire/Fire";
+import { Fire } from "../../_svg/Icons/Fire";
 
 
 // Begin Component

@@ -1,11 +1,7 @@
 // Core
 import React from "react";
 import { Inner } from "../../Inner";
-import { Bird } from "../../_svg/Bird/Bird";
-import { Checkmark } from "../../_svg/Checkmark/Checkmark";
-import { Fire } from "../../_svg/Fire/Fire";
-import { Logotype } from "../../_svg/Logotype/Logotype";
-import { Anchor } from "../Anchor";
+import Slider from "react-slick";
 
 // Styles
 import {
@@ -36,13 +32,24 @@ export const TestimonialsSlider: React.FunctionComponent<LMNTS_Section_Testimoni
   testimonials,
 }) => {
 
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    autoplay: true,
+    autoplaySpeed: 8000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    buttons: true
+  };
+
   return (
     <TestimonialsSliderStyle className={`${TestimonialsSliderClassName}`}>
       <Inner>
         <div className={`${TestimonialsSliderClassName}__container`}>
           {headline && <h2 className={`${TestimonialsSliderClassName}__headline h3`}>{headline}</h2>}
 
-          <div className={`${TestimonialsSliderClassName}__slider`}>
+          <Slider {...settings} className={`${TestimonialsSliderClassName}__slider`}>
             {testimonials && testimonials.length > 0 && 
               testimonials.map((testimonial, idx) => {
                 return (
@@ -55,7 +62,7 @@ export const TestimonialsSlider: React.FunctionComponent<LMNTS_Section_Testimoni
                 )
               })
             }
-          </div>
+          </Slider>
         </div>
       </Inner>
     </TestimonialsSliderStyle>

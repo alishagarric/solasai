@@ -9,7 +9,7 @@
 // Core
 import React from "react";
 import { Button } from "../Sections/Button";
-import { Logo } from "../_svg/Logo/Logo";
+import { Logo } from "../_svg/Logos/Logo";
 
 // Styles
 import { NavigationClassName, NavigationStyle } from "./styles.scss";
@@ -81,7 +81,7 @@ export type NavigationData = {
               <p><a href="#why-solasai">Why Choose SolasAI</a></p>
             </li>
           </ul>
-          <Button link="/" label="Contact Us" />
+          <Button link="#contact" label="Contact Us" />
         </div>
         
       </NavigationStyle>

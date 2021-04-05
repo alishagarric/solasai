@@ -12,8 +12,10 @@
 // Core
 import styled from "styled-components";
 import { Root } from "../../constants/Root";
+import { Font } from "../../constants/styles/Font";
 import { Theme } from "../../constants/Theme";
-import { BirdClassName } from "../_svg/Bird/Bird";
+import { BlueBirdClassName } from "../_svg/Birds/BlueBird";
+import { LogoClassName } from "../_svg/Logos/Logo";
 
 // Begin Styles
 //////////////////////////////////////////////////////////////////////
@@ -30,13 +32,120 @@ export const FooterStyle = styled.footer`
     position: relative;
     overflow: hidden;
 
-    .${BirdClassName} {
-      opacity: .05;
+    .${BlueBirdClassName} {
       position: absolute;
       top: 0;
-      width: 50%;
+      height: 130%;
       left: -20%;
-      height: auto;
+      width: auto;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .${FooterClassName}__headline, .${FooterClassName}__container {
+      padding-left: 10%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .${FooterClassName}__headline {
+      width: 100%;
+      padding-bottom: calc(${Root.Size} * 3);
+    }   
+
+    .${FooterClassName}__bottom {
+      padding-top: calc(${Root.Size} * 4);
+      width: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      svg {
+        path {
+          fill: ${Theme.Color.White};
+        }
+
+        .${LogoClassName}__ai {
+          opacity: .5;
+        }
+      }
+    }     
+
+    .${FooterClassName}__container {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      width: 100%;
+
+      .${FooterClassName}__details {
+        flex: 2;
+
+        &__subheadline {
+          padding-bottom: calc(${Root.Size} * 3);
+        }
+
+        &__row {
+          display: flex;
+
+          svg {
+            height: 20px;
+            width: 20px;
+            margin-right: ${Root.Size};
+            transform: translateY(25%);
+          }
+        }
+      }
+
+      .${FooterClassName}__form {
+        flex: 3;
+
+        form {
+          display: flex;
+          width: 100%;
+
+          fieldset {
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+
+            &:first-of-type {
+              flex: 3;
+            }
+
+            &:last-of-type {
+              flex: 4;
+            }
+          }
+
+          textarea {
+            flex: 1;
+          }
+
+          input, textarea {
+            margin-bottom: ${Root.Size};
+            margin-right: ${Root.Size};
+            padding: ${Root.Size};
+            font-size: 1rem;
+            text-transform: uppercase;
+            font-family: ${Font.Header};
+            letter-spacing: 1px;
+            color: ${Theme.Color.Text};
+          }
+
+          input {
+            height: 59px;
+            background: ${Theme.Color.White};
+            border: none;
+
+            &[type="submit"] {
+              background: transparent;
+              border: 1px solid ${Theme.Color.White};
+              color: ${Theme.Color.White};
+            }
+          }
+        }
+      }
     }
   }
 `;

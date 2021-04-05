@@ -1,9 +1,9 @@
 // Core
 import React from "react";
 import { Inner } from "../../Inner";
-import { Bird } from "../../_svg/Bird/Bird";
-import { Fire } from "../../_svg/Fire/Fire";
-import { Logotype } from "../../_svg/Logotype/Logotype";
+import { Bird } from "../../_svg/Birds/Bird";
+import { Fire } from "../../_svg/Icons/Fire";
+import { Logotype } from "../../_svg/Logos/Logotype";
 
 // Styles
 import {

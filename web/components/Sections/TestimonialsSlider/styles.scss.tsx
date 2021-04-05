@@ -10,11 +10,10 @@
 //////////////////////////////////////////////////////////////////////
 
 // Core
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { Root } from "../../../constants/Root";
 import { Base } from "../../../constants/styles/Base";
 import { Theme } from "../../../constants/Theme";
-import { CheckmarkClassName } from "../../_svg/Checkmark/Checkmark";
 
 // Constants
 
@@ -23,7 +22,7 @@ import { CheckmarkClassName } from "../../_svg/Checkmark/Checkmark";
 // Begin Styles
 //////////////////////////////////////////////////////////////////////
 
-export const TestimonialsSliderClassName = `bulleted-section`;
+export const TestimonialsSliderClassName = `testimonial-slider`;
 
 export const TestimonialsSliderStyle = styled.section`
   &.${TestimonialsSliderClassName} {
@@ -42,14 +41,71 @@ export const TestimonialsSliderStyle = styled.section`
       }
 
       .${TestimonialsSliderClassName}__slider {
+        position: relative;
+
         &__slide {
           text-align: center;
-          display: none;
           padding-left: 10%;
           padding-right: 10%;
+        }
 
-          &:first-of-type {
+        &:before, &:after {
+          content: "";
+          position: absolute;
+          width: 10%;
+          background: linear-gradient(to right, transparent, ${Theme.Color.White});
+          pointer-events: none;
+          top: 0;
+          bottom: 0;
+          z-index: 2;
+        }
+
+        &:before {
+          left: 0;
+          transform: scaleX(-1);
+        }
+
+        &:after {
+          right: 0;
+        }
+
+        .slick-dots {
+          li {
+
+            &.slick-active {
+              button {
+                background: ${Theme.Color.Text};
+              }
+            }
+
+            button {
+              border: 1px solid ${Theme.Color.Text};
+              border-radius: 50%;
+
+              &:before {
+                content: none;
+              }
+            }
+          }
+        }
+
+        .slick-arrow {
+          height: 40px;
+            width: 40px;
+            border-top: 4px solid ${Theme.Color.Secondary};
+            border-right: 4px solid ${Theme.Color.Secondary};
+            transform: rotate(45deg);
             display: block;
+            opacity: 1;
+            bottom: 50%;
+            top: auto;
+
+            &:before {
+              content: none;
+            }
+
+          &.slick-prev {
+            transform: scaleX(-1) rotate(45deg);
           }
         }
       }

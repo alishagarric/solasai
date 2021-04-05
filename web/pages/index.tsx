@@ -19,6 +19,12 @@ import { WarningSection } from "../components/Sections/WarningSection";
 import { InteractiveCards } from "../components/Sections/InteractiveCards";
 import { SplitSection } from "../components/Sections/SplitSection";
 import { TestimonialsSlider } from "../components/Sections/TestimonialsSlider";
+import { NumberEye } from "../components/_svg/Icons/NumberEye";
+import { Bullseye } from "../components/_svg/Icons/Bullseye";
+import { GamePlay } from "../components/_svg/Icons/GamePlay";
+import { RisingGraph } from "../components/_svg/Icons/RisingGraph";
+import { Contract } from "../components/_svg/Icons/Contract";
+import { ViewGraph } from "../components/_svg/Icons/ViewGraph";
 
 // Begin Component
 // __________________________________________________________________________________________
@@ -49,10 +55,10 @@ const HomePage: NextPage<HomePage> = () => {
       >
         <ColumnIconBlocks 
           icons={[
-            { icon: <Illuminate/>, label: "Illuminate drivers of discrimination" },
-            { icon: <Illuminate/>, label: "Illuminate drivers of discrimination" },
-            { icon: <Illuminate/>, label: "Clarify drivers of predictive value" },
-            { icon: <Illuminate/>, label: "Auto-generate fairer alternatives" },
+            { icon: <NumberEye />, label: "Detects and quantifies algorithmic disparities" },
+            { icon: <Illuminate />, label: "Illuminate drivers of discrimination" },
+            { icon: <Bullseye />, label: "Clarify drivers of predictive value" },
+            { icon: <GamePlay />, label: "Auto-generate fairer alternatives" },
           ]}
         />
         <Button label="Download Whitepaper" link="/" />
@@ -69,31 +75,31 @@ const HomePage: NextPage<HomePage> = () => {
           {
             label: "Modeler",
             cards: [
-              { front_text: "You are the best at building models for your company - We don’t ask you to change", back_text: "back text" },
-              { front_text: "We take testing for discrimination off your plate so you can focus on predictive value for your company", back_text: "back text" },
-              { front_text: "We provide you additional insight to make your model better", back_text: "back text" },
-              { front_text: "We preserve and expand the great work you have done", back_text: "back text" },
-              { front_text: "We generate the documentation and insights you need to choose the best, fair alternative for you business", back_text: "back text" }
+              { front_text: "You are the best at building models for your company - We don’t ask you to change", back_text: "We use your models" },
+              { front_text: "We take testing for discrimination off your plate so you can focus on predictive value for your company", back_text: "We expose disparities" },
+              { front_text: "We provide you additional insight to make your model better", back_text: "We explain what drives value and disparities" },
+              { front_text: "We preserve and expand the great work you have done", back_text: "We create alternatives without sacrificing predictive value" },
+              { front_text: "We generate the documentation and insights you need to choose the best, fair alternative for you business", back_text: "We generate the information you need to make justifiable choices" }
             ]
           },
           {
             label: "Compliance / Legal",
             cards: [
-              { front_text: "You are the best at building models for your company - We don’t ask you to change", back_text: "back text" },
-              { front_text: "We take testing for discrimination off your plate so you can focus on predictive value for your company", back_text: "back text" },
-              { front_text: "We provide you additional insight to make your model better", back_text: "back text" },
-              { front_text: "We preserve and expand the great work you have done", back_text: "back text" },
-              { front_text: "We generate the documentation and insights you need to choose the best, fair alternative for you business", back_text: "back text" }
+              { front_text: "You don't have to get your modelers to change", back_text: "We use your models" },
+              { front_text: "We test using accepted standards that will give you the greatest protection possible", back_text: "We expose disparities" },
+              { front_text: "We openly clarify what is happening in the models so you understand it", back_text: "We explain what drives value and disparities" },
+              { front_text: "We generate justifiable alternatives that have a minor impact on predictive value", back_text: "We create alternatives without sacrificing predictive value" },
+              { front_text: "We provide you the information you need to choose the best alternative for your business and justify it to regulators", back_text: "We generate the information you need to make justifiable choices" }
             ]
           },
           {
             label: "Chief data officer",
             cards: [
-              { front_text: "You are the best at building models for your company - We don’t ask you to change", back_text: "back text" },
-              { front_text: "We take testing for discrimination off your plate so you can focus on predictive value for your company", back_text: "back text" },
-              { front_text: "We provide you additional insight to make your model better", back_text: "back text" },
-              { front_text: "We preserve and expand the great work you have done", back_text: "back text" },
-              { front_text: "We generate the documentation and insights you need to choose the best, fair alternative for you business", back_text: "back text" }
+              { front_text: "We aren't trying to replace your modelers - we just want to make them more efficient", back_text: "We use your models" },
+              { front_text: "We continually update our testing module based on the latest guidance, research and accepted standards", back_text: "We expose disparities" },
+              { front_text: "We illuminate what is driving value and disparities in the models", back_text: "We explain what drives value and disparities" },
+              { front_text: "We generate viable alternatives that ensure overall model quality", back_text: "We create alternatives without sacrificing predictive value" },
+              { front_text: "We provide your subject matter experts the best alternatives and supporting information to grow and protect your business", back_text: "We generate the information you need to make justifiable choices" }
             ]
           }
         ]}
@@ -123,7 +129,7 @@ const HomePage: NextPage<HomePage> = () => {
         headline="Interested in learning more? Reduce your risk with fairer AI"
         cta={{
           label: "Contact us today",
-          link: "/"
+          link: "#contact"
         }}
       />
 
@@ -148,10 +154,10 @@ const HomePage: NextPage<HomePage> = () => {
       <BracketSection 
         headline="SolasAI leverages your existing models and production pipeline"
         icons={[
-          { icon: <MagnifyingGlass/>, label: "Configurable Business Rules and Objectives" },
+          { icon: <RisingGraph />, label: "Configurable Business Rules and Objectives" },
           { icon: <MagnifyingGlass/>, label: "Optimized, Fast, & Fair Search" },
-          { icon: <MagnifyingGlass/>, label: "Regulatory Expertise" },
-          { icon: <MagnifyingGlass/>, label: "Explainable AI" },
+          { icon: <Contract />, label: "Regulatory Expertise" },
+          { icon: <ViewGraph />, label: "Explainable AI" },
         ]}
       />
 
@@ -165,7 +171,7 @@ const HomePage: NextPage<HomePage> = () => {
           {label: "Trusted Fair Lending", text: "used by virtually every major lending institution in the U.S" },
           {label: "Expert Consultants", text: "to numerous Federal, State, and Local Regulators" }
         ]}
-        image="https://source.unsplash.com/1600x900/?tech"
+        image="/img/helixs.png"
         alt="We don’t set out with the intention of reinventing or replacing your modeling process."
       />
 

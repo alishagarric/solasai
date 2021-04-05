@@ -1,7 +1,6 @@
 // Core
 import React from "react";
 import { Inner } from "../../Inner";
-import { Bird } from "../../_svg/Bird/Bird";
 
 // Styles
 import {
@@ -10,8 +9,7 @@ import {
 } from "./styles.scss";
 
 //Components
-import Link from "next/link";
-import { RedBird } from "../../_svg/RedBird/RedBird";
+import { RedBird } from "../../_svg/Birds/RedBird";
 import { Button } from "../Button";
 
 

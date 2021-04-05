@@ -14,7 +14,7 @@ import styled, { keyframes } from "styled-components";
 import { Root } from "../../../constants/Root";
 import { Base } from "../../../constants/styles/Base";
 import { Theme } from "../../../constants/Theme";
-import { BirdClassName } from "../../_svg/Bird/Bird";
+import { BirdClassName } from "../../_svg/Birds/Bird";
 import { CircleDecorClassName } from "../../_svg/CircleDecor/CircleDecor";
 import { ButtonClassName } from "../Button/styles.scss";
 
@@ -35,21 +35,23 @@ export const InteractiveCardsStyle = styled.section`
     padding-bottom: calc(${Root.Size} * 4);
     overflow: hidden;
 
-    .${BirdClassName} {
+    .${BirdClassName}, .${CircleDecorClassName} {
       position: absolute;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .${BirdClassName} {
       right: 0;
       top: 50%;
       height: 90%;
       width: auto;
-      z-index: 0;
       transform: translate(50%, -50%);
     }
 
     .${CircleDecorClassName} {
-      position: absolute;
       bottom:  0;
       left: 0;
-      z-index: 0;
       width: 50%;
       height: auto;
     }
@@ -60,7 +62,7 @@ export const InteractiveCardsStyle = styled.section`
       margin-right: auto;
 
       .${InteractiveCardsClassName}__headline {
-        padding-bottom: calc(${Root.Size} * 1.5);
+        padding-bottom: calc(${Root.Size} * 2);
         width: 100%;
       }
 
@@ -70,18 +72,31 @@ export const InteractiveCardsStyle = styled.section`
         align-items: center;
         position: relative;
         z-index: 1;
-        padding-bottom: calc(${Root.Size} * 1.5);
+        padding-bottom: calc(${Root.Size} * 2);
 
         &__card-sets-nav {
           display: flex;
 
-          .${ButtonClassName} {
-            margin-top: 0;
-            margin-right: ${Root.Size};
+          &__item {
+            cursor: pointer;
 
-            div {
-              padding-left: ${Root.Size};
-              padding-right: ${Root.Size};  
+            &:not(.__active) {
+              opacity: 0.5;
+
+              .${ButtonClassName} div {
+                color: ${Theme.Color.Text};
+                border-color: ${Theme.Color.Text};
+              }
+            }
+
+            .${ButtonClassName} {
+              margin-top: 0;
+              margin-right: ${Root.Size};
+
+              div {
+                padding-left: ${Root.Size};
+                padding-right: ${Root.Size};  
+              }
             }
           }
         }
@@ -92,66 +107,122 @@ export const InteractiveCardsStyle = styled.section`
 
         &__cards {
           display: none;
-          grid-template-columns: 1fr 1fr 1fr;
-          gap: 8%;
           position: relative;
           z-index: 1;
-          width: 100%;
-          
-          &__card {
-            background: ${Theme.Color.White};
-            aspect-ratio: 1;
-            position: relative;
-            padding: 5% 20% 20% 10%;
+          width: calc(100% + calc(calc(100% / 3) * 2/10));
+          flex-wrap: wrap;
+          justify-content: flex-end;
 
-            &__label {
-              opacity: 0.5;
+          
+          .${InteractiveCardsClassName}__card {
+            flex: 0 0 calc(100% / 3);
+            position: relative;
+            padding-top: calc(100% / 3);
+
+            &:nth-of-type(2) {
+              margin-right: calc(100% / 3);
+            }
+
+            &:nth-of-type(3){
+              margin-left: calc(100% / 3);
+            }
+            
+            &__inner {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 80%;
+              height: 80%;
+              background: ${Theme.Color.White};
+              padding: 5% 10% 5% 5%;
+              will-change: transform;
+              transition: transform 0.5s linear 0s;
+              cursor: pointer;
+
+              &__label {
+                opacity: 0.5;
+              }
+
+              &__back {
+                opacity: 0;
+                position: absolute;
+                top: 5%;
+                left: 5%;
+                bottom: 5%;
+                right: 10%;
+                transform: scaleX(-1);
+              }
+
+              &__back, &__front {
+                padding-bottom: 0;
+              }
+
+              &__label, &__back, &__front, &__index {
+                will-change: opacity;
+                transition: opacity 0s linear 0.25s;
+                overflow: hidden;
+              }
+
+              &:nth-of-type(3){
+                grid-row: 2 / 3;
+                grid-column: 2 / 3;
+              }
+
+              &:nth-of-type(4){
+                grid-row: 2 / 3;
+                grid-column: 3 / 4;
+              }
+
+              &:nth-of-type(5){
+                grid-row: 3 / 4;
+                grid-column: 3 / 4;
+              }
+
+              &:hover {
+                transform: scaleX(-1);
+
+                .${InteractiveCardsClassName}__card__inner__back {
+                  opacity: 1;
+                }
+
+                .${InteractiveCardsClassName}__card__inner {
+                  &__front, &__index, &__label {
+                    opacity: 0;
+                  }
+                }
+              }
             }
 
             &:after {
               content: "";
               position: absolute;
-              height: 19px;
-              width: 19px;
-              background: ${Theme.Color.Secondary};
+              height: 0px;
+              width: 0px;
+              border-left: 15px solid transparent;
+              border-right: 15px solid transparent;
+              border-top: 15px solid ${Theme.Color.Secondary};
               opacity: 0.43;
             }
 
             &:nth-of-type(1):after, &:nth-of-type(3):after {
-              top: 50%;
-              left: calc(100% + calc(${Root.Size} * 1.5));
-              transform: translate(-50%, -50%);
+              left: 90%;
+              top: 40%;
+              transform: translate(-50%, -50%) rotate(-90deg);
             }
 
             &:nth-of-type(2):after, &:nth-of-type(4):after {
-              left: calc(${Root.Size} * 1.5);
-              top: calc(100% + calc(${Root.Size} * 1.5));
+              top: 90%;
+              left: 10%;
               transform: translate(-50%, -50%);
             }
 
             &:last-of-type:after {
               content: none;
             }
-
-            &:nth-of-type(3){
-              grid-row: 2 / 3;
-              grid-column: 2 / 3;
-            }
-
-            &:nth-of-type(4){
-              grid-row: 2 / 3;
-              grid-column: 3 / 4;
-            }
-
-            &:nth-of-type(5){
-              grid-row: 3 / 4;
-              grid-column: 3 / 4;
-            }
-
           }
 
           &.__active {
-            display: grid;
+            display: flex;
           }
         }
       }

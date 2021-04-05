@@ -72,7 +72,7 @@ export const InteractiveCardsStyle = styled.section`
         align-items: center;
         position: relative;
         z-index: 1;
-        padding-bottom: calc(${Root.Size} * 2);
+        margin-bottom: calc(${Root.Size} * 2);
 
         &__card-sets-nav {
           display: flex;
@@ -316,6 +316,7 @@ export const InteractiveCardsStyle = styled.section`
     @media (max-width: ${Base.Media.Width.Sm + "px"}) {
       padding-left: 0;
       padding-right: 0;
+      overflow: visible;
 
       .${BirdClassName}, .${CircleDecorClassName} {
         display: none;
@@ -325,10 +326,50 @@ export const InteractiveCardsStyle = styled.section`
         position: relative;
 
         .${InteractiveCardsClassName}__header {
-         overflow: auto;
+          position: -webkit-sticky;
+          position: sticky;
+          top: 50px;
+          z-index: 2;
+          background: ${Theme.Color.Background};
+          padding-bottom: 5px;
+
+          &__card-sets-nav {
+            width: 100%;
+            justify-content: space-between;
+
+            &__item {
+              flex: calc(calc(100% / 3) - ${Root.Size});
+              white-space: normal;
+              margin-right: calc(${Root.Size} / 2);
+              
+              &:last-of-type {
+                margin-right: 0;
+              }
+
+              .${ButtonClassName} {
+                margin-right: 0;
+                font-size: 0.7rem;
+                height: 100%;
+                width: 100%;
+                
+
+                a, div {
+                  padding: calc(${Root.Size} / 2);
+                  height: 100%;
+                  display: grid;
+                  place-content: center;
+                  width: 100%;
+                  text-align: center;
+                }
+              }
+
+            }
+          }
         }
 
         .${InteractiveCardsClassName}__card-sets {
+          z-index: 1;
+
           &__cards {
             .${InteractiveCardsClassName}__card {
               flex: 0 0 100%;

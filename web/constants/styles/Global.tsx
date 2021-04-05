@@ -45,7 +45,7 @@ html {
     margin: 0;
     padding: 0;
     min-height: 100%;
-    overflow: auto;
+   // overflow: auto;
     background-color: ${Theme.Color.White};
     color: ${Theme.Color.Text};
 

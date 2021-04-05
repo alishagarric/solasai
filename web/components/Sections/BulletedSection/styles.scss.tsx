@@ -110,10 +110,18 @@ export const BulletedSectionStyle = styled.section`
         }
 
         .${BulletedSectionClassName}__content {
-
           &__body {
             padding-left: 0;
             padding-right: 0;
+
+            &__bullets {
+              li {
+
+                .${CheckmarkClassName} {
+                  transform: translateY(25%);
+                }
+              }
+            }
           }
         }
       }

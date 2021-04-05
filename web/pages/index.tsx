@@ -50,8 +50,8 @@ const HomePage: NextPage<HomePage> = () => {
 
       <OffsetImageSection 
         image="/img/graph.png"
-        alt={"Understand and Resolve Disparity while Preserving Predictive Value of Your Model"}
-        headline={"Understand and Resolve Disparity while Preserving Predictive Value of Your Model"}
+        alt={"Understand and Resolve Disparity while Preserving the Predictive Value of Your Model"}
+        headline={"Understand and Resolve Disparity while Preserving the Predictive Value of Your Model"}
       >
         <ColumnIconBlocks 
           icons={[
@@ -161,7 +161,7 @@ const HomePage: NextPage<HomePage> = () => {
         ]}
       />
 
-      <WarningSection text="We don’t set out with the intention of reinventing or replacing your modeling process. We are not trying to be AutoML" />
+      <WarningSection text={{__html: "<p className='h5'><strong>We are not trying to be AutoML.</strong> We don’t set out with the intention of reinventing or replacing your modeling process.</p>"}} />
       <SplitSection 
         headline={{__html: "<h3><strong>SolasAI</strong> was created by industry-leading consultants and data scientists</h3>"}}
         text_blocks={[

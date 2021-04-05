@@ -16,6 +16,7 @@ import { Base } from "../../constants/styles/Base";
 import { Theme } from "../../constants/Theme";
 import { ButtonClassName } from "../Sections/Button/styles.scss";
 import { RedBirdClassName } from "../_svg/Birds/RedBird";
+import { BrandmarkClassName } from "../_svg/Brandmark/Brandmark";
 import { LogoClassName } from "../_svg/Logos/Logo";
 
 // Begin Styles
@@ -37,7 +38,7 @@ export const NavigationStyle = styled.nav`
     background: ${Theme.Color.Background};
 
     .${NavigationClassName}__logo {
-      .${RedBirdClassName} {
+      .${BrandmarkClassName} {
         display: none;
       }
     }
@@ -91,7 +92,7 @@ export const NavigationStyle = styled.nav`
       
       .${NavigationClassName}__logo {
 
-        .${RedBirdClassName} {
+        .${BrandmarkClassName} {
           display: block;
           height: 40px;
           margin-top: 5px;

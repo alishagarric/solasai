@@ -10,6 +10,7 @@
 import React from "react";
 import { Button } from "../Sections/Button";
 import { RedBird } from "../_svg/Birds/RedBird";
+import { Brandmark } from "../_svg/Brandmark/Brandmark";
 import { Logo } from "../_svg/Logos/Logo";
 
 // Styles
@@ -57,7 +58,7 @@ export type NavigationData = {
       <NavigationStyle className={`${NavigationClassName}`}>
         <div className={`${NavigationClassName}__logo`}>
           <Logo />
-          <RedBird />
+          <Brandmark />
         </div>
 
         <div className={`${NavigationClassName}__links`}>

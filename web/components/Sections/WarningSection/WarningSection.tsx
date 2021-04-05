@@ -13,7 +13,9 @@ import {
 // __________________________________________________________________________________________
 
 export type LMNTS_Section_WarningSection = {
-  text: string;
+  text: { 
+    __html: string;
+  };
 };
 
 /**
@@ -32,7 +34,7 @@ export const WarningSection: React.FunctionComponent<LMNTS_Section_WarningSectio
       <Inner className={`${WarningSectionClassName}__inner`}>
         <div className={`${WarningSectionClassName}__warning-box`}>
           <Warning />
-          <p className="h5">{text}</p>
+          <div dangerouslySetInnerHTML={text}/>
         </div>
       </Inner>
     </WarningSectionStyle>

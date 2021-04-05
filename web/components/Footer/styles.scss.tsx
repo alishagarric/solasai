@@ -184,6 +184,7 @@ export const FooterStyle = styled.footer`
 
         .${FooterClassName}__form {
           margin-top: ${Root.Size};
+          width: 100%;
 
           form {
             input, textarea {

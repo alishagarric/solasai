@@ -53,7 +53,7 @@ export const TestimonialsSliderStyle = styled.section`
           content: "";
           position: absolute;
           width: 10%;
-          background: linear-gradient(to right, transparent, ${Theme.Color.White});
+          background: linear-gradient(to right, rgba(255, 255, 255, 0), ${Theme.Color.White});
           pointer-events: none;
           top: 0;
           bottom: 0;

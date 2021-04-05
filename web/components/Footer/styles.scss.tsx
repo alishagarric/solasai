@@ -89,17 +89,6 @@ export const FooterStyle = styled.footer`
         &__subheadline {
           padding-bottom: calc(${Root.Size} * 3);
         }
-
-        &__row {
-          display: flex;
-
-          svg {
-            height: 20px;
-            width: 20px;
-            margin-right: ${Root.Size};
-            transform: translateY(25%);
-          }
-        }
       }
 
       .${FooterClassName}__form {

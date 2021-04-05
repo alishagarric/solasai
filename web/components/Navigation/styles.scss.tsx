@@ -15,14 +15,18 @@ import { Root } from "../../constants/Root";
 import { Base } from "../../constants/styles/Base";
 import { Theme } from "../../constants/Theme";
 import { ButtonClassName } from "../Sections/Button/styles.scss";
-import { RedBirdClassName } from "../_svg/Birds/RedBird";
+import { ContactInfoClassName } from "../Sections/ContactInfo/styles.scss";
+import { BlueBird, BlueBirdClassName } from "../_svg/Birds/BlueBird";
 import { BrandmarkClassName } from "../_svg/Brandmark/Brandmark";
+import { ExitClassName } from "../_svg/Icons/Exit";
+import { HamburgerClassName } from "../_svg/Icons/Hamburger";
 import { LogoClassName } from "../_svg/Logos/Logo";
 
 // Begin Styles
 //////////////////////////////////////////////////////////////////////
 
 export const NavigationClassName = `nav`;
+export const NavigationOverlayClassName = `nav-overlay`;
 
 export const NavigationStyle = styled.nav`
   &.${NavigationClassName} {
@@ -39,6 +43,10 @@ export const NavigationStyle = styled.nav`
 
     .${NavigationClassName}__logo {
       .${BrandmarkClassName} {
+        display: none;
+      }
+
+      &__menu-toggle {
         display: none;
       }
     }
@@ -91,6 +99,8 @@ export const NavigationStyle = styled.nav`
       padding: 0 5px 0 ${Root.Size};
       
       .${NavigationClassName}__logo {
+        display: flex;
+        align-items: center;
 
         .${BrandmarkClassName} {
           display: block;
@@ -102,6 +112,16 @@ export const NavigationStyle = styled.nav`
 
         .${LogoClassName} {
           display: none;
+        }
+
+        &__menu-toggle {
+          display: block;
+          margin-right: calc(${Root.Size} / 2);
+
+          .${HamburgerClassName} {
+            width: auto;
+            height: 30px;
+          }
         }
       }
 
@@ -121,6 +141,66 @@ export const NavigationStyle = styled.nav`
           }
         }
       }
+    }
+  }
+`;
+
+export const NavigationOverlayStyle = styled.nav`
+  &.${NavigationOverlayClassName} {
+    position: fixed;
+    display: none;
+    background: ${Theme.Color.Text};
+    color: ${Theme.Color.White};
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    padding: ${Root.Size};
+    flex-direction: column;
+    justify-content: space-between;
+
+    .${BlueBirdClassName}{
+      position: absolute;
+      height: 80%;
+      right: -20%;
+      width: auto;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 0;
+    }
+
+    .${NavigationOverlayClassName}__exit, .${NavigationOverlayClassName}__links, .${ContactInfoClassName} {
+      position: relative;
+      z-index: 1;
+    }
+
+    .${NavigationOverlayClassName}__exit {
+      padding-bottom: calc(${Root.Size} * 3);
+      .${ExitClassName} {
+        width: 30px;
+        height: auto;
+      }
+    } 
+
+    .${NavigationOverlayClassName}__links {
+      flex: 1;
+
+      &__list {
+        &__item {
+          a {
+            font-size: 10vw;
+            text-transform: uppercase;
+            font-weight: 600;
+            padding: 2vw 0;
+            display: block;
+          }
+        }
+      }
+    }
+
+    &.__active {
+      display: flex;
     }
   }
 `;

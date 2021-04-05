@@ -10,6 +10,8 @@
 import React from "react";
 import { Inner } from "../Inner";
 import { Anchor } from "../Sections/Anchor";
+import { ContactInfo } from "../Sections/ContactInfo";
+import { ContactInfoStyle } from "../Sections/ContactInfo/styles.scss";
 import { BlueBird } from "../_svg/Birds/BlueBird";
 import { Email } from "../_svg/Icons/Email";
 import { Location } from "../_svg/Icons/Location";
@@ -36,30 +38,13 @@ export const Footer: React.FunctionComponent<Footer> = ({ }) => {
 
             <div className={`${FooterClassName}__details`}>
               <h3 className={`${FooterClassName}__details__subheadline h4`}>Reach Us Directly</h3>
-
-              <div className={`${FooterClassName}__details__row`}>
-                <Email />
-                <p className={`${FooterClassName}__details__row__text`}><a href="mailto:info@solas.ai">info@solas.ai</a></p>
-              </div>
-
-              <div className={`${FooterClassName}__details__row`}>
-                <Location />
-                <p className={`${FooterClassName}__details__row__text`}>
-                  <a href="">
-                    1608 Walnut St. 
-                    <br/>
-                    Suite 1108
-                    <br/>
-                    Philadelphia, PA 19103
-                  </a>
-                </p>
-              </div>
+              <ContactInfo />
             </div>
 
             <div className={`${FooterClassName}__form`}>
               <p><i>Fill out the form below and our team will contact you</i></p>
               <form
-                action="https://formspree.io/f/myylyejz"
+                action="https://formspree.io/f/mdoyogdw"
                 method="POST"
               >
                 <fieldset>

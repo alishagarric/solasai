@@ -30,8 +30,9 @@ export const AnchorStyle = styled.div`
     top: -90px;
     left: 0;
     width: 100%;
-    @media (max-width: ${Base.Media.Width.Sm + "px"}), (max-width: ${Base.Media.Width.Md + "px"}) and (orientation: landscape) and (max-height: ${Base.Media.Height.Md + "px"}) {
 
+    @media (max-width: ${Base.Media.Width.Sm + "px"}) {
+      top: -50px;
     }
   }
 `;

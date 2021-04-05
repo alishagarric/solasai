@@ -19,6 +19,7 @@ export type LMNTS_Section_Button = {
   link?: string;
   label: string;
   target?: string;
+  download?: string;
 };
 
 /**
@@ -31,15 +32,32 @@ export type LMNTS_Section_Button = {
 export const Button: React.FunctionComponent<LMNTS_Section_Button> = ({
   link,
   label,
-  target
+  download,
+  target,
 }) => {
 
-  if (link){
+  if (download) {
     return (
       <ButtonStyle className={`${ButtonClassName}`}>
-        <AnchorLink href={link} target={target ? target : "_self"} className="txt-caption">
+        <a className="txt-caption" href={download} download>
+          {label}
+        </a>
+      </ ButtonStyle>
+    );
+  } else if (link && !target){
+    return (
+      <ButtonStyle className={`${ButtonClassName}`}>
+        <AnchorLink href={link} className="txt-caption">
           {label}
         </AnchorLink>
+      </ButtonStyle>
+    );
+  } else if (link && target) {
+    return (
+      <ButtonStyle className={`${ButtonClassName}`}>
+        <a href={link} target={target ? target : "_self"} className="txt-caption">
+          {label}
+        </a>
       </ButtonStyle>
     );
   } else {

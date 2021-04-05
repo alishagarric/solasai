@@ -61,7 +61,7 @@ const HomePage: NextPage<HomePage> = () => {
             { icon: <GamePlay />, label: "Auto-generate viable alternatives with less disparity alternatives" },
           ]}
         />
-        <Button label="Download Whitepaper" link="/" />
+        <Button label="Download Whitepaper" link="https://drive.google.com/file/d/172vBJ630tQYadgPP7Ln-NNURMYGt9SFC/view" target="_blank"/>
       </OffsetImageSection>
 
 

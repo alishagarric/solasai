@@ -237,12 +237,32 @@ var external_react_anchor_link_smooth_scroll_default = /*#__PURE__*/__webpack_re
 const Button = ({
   link,
   label,
+  download,
   target
 }) => {
-  if (link) {
+  if (download) {
+    return /*#__PURE__*/Object(jsx_runtime_["jsx"])(styles_scss["b" /* ButtonStyle */], {
+      className: `${styles_scss["a" /* ButtonClassName */]}`,
+      children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("a", {
+        className: "txt-caption",
+        href: download,
+        download: true,
+        children: label
+      })
+    });
+  } else if (link && !target) {
     return /*#__PURE__*/Object(jsx_runtime_["jsx"])(styles_scss["b" /* ButtonStyle */], {
       className: `${styles_scss["a" /* ButtonClassName */]}`,
       children: /*#__PURE__*/Object(jsx_runtime_["jsx"])(external_react_anchor_link_smooth_scroll_default.a, {
+        href: link,
+        className: "txt-caption",
+        children: label
+      })
+    });
+  } else if (link && target) {
+    return /*#__PURE__*/Object(jsx_runtime_["jsx"])(styles_scss["b" /* ButtonStyle */], {
+      className: `${styles_scss["a" /* ButtonClassName */]}`,
+      children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("a", {
         href: link,
         target: target ? target : "_self",
         className: "txt-caption",

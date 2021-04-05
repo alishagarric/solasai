@@ -46,7 +46,7 @@ export const SplitSection: React.FunctionComponent<LMNTS_Section_SplitSection> =
     <SplitSectionStyle className={`${SplitSectionClassName}`}>
 
       <div className={`${SplitSectionClassName}__image`}>
-        <LazyImage alt={alt} src={image} />
+        <img alt={alt} src={image} />
       </div>
 
       <Inner>

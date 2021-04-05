@@ -41,7 +41,7 @@ export const OffsetImageSection: React.FunctionComponent<LMNTS_Section_OffsetIma
 
         <div className={`${OffsetImageSectionClassName}__content`}>
           <div className={`${OffsetImageSectionClassName}__content__image`}>
-            <LazyImage alt={alt} src={image}/>
+            <img alt={alt} src={image}/>
           </div>
           <div className={`${OffsetImageSectionClassName}__content__children`}>
             {children}

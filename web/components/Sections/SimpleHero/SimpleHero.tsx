@@ -4,6 +4,7 @@ import { Inner } from "../../Inner";
 import { Bird } from "../../_svg/Birds/Bird";
 import { Fire } from "../../_svg/Icons/Fire";
 import { Logotype } from "../../_svg/Logos/Logotype";
+import { Button } from "../Button";
 
 // Styles
 import {
@@ -18,6 +19,11 @@ export type LMNTS_Section_SimpleHero = {
   headline?: string;
   logo?: boolean;
   guide_text?: string;
+  cta?: {
+    link: string;
+    label: string;
+    target?: string;
+  }
 };
 
 /**
@@ -30,7 +36,8 @@ export type LMNTS_Section_SimpleHero = {
 export const SimpleHero: React.FunctionComponent<LMNTS_Section_SimpleHero> = ({
   headline,
   logo,
-  guide_text
+  guide_text,
+  cta
 }) => {
 
   return (
@@ -45,7 +52,14 @@ export const SimpleHero: React.FunctionComponent<LMNTS_Section_SimpleHero> = ({
             {logo && <Logotype />}
           </div>
 
-          {guide_text && <p className={`${SimpleHeroClassName}__grid__guide txt-caption`}><span>{guide_text}</span></p>}
+          {guide_text || cta && 
+            <p className={`${SimpleHeroClassName}__grid__guide txt-caption`}>
+              <span>{guide_text}</span>
+              {cta &&
+                <Button link={cta.link} label={cta.label} target={cta.target} />
+              }
+            </p>
+          }
         </div>
       </Inner>
     </SimpleHeroStyle>

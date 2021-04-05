@@ -1,10 +1,10 @@
 // Core
 import React from "react";
-import LazyLoad from "vanilla-lazyload";
+
 
 // Begin Component
 // __________________________________________________________________________________________
-
+/*
 type Props = {
   alt?: string;
   src?: string;
@@ -18,13 +18,6 @@ type Props = {
   aspectRatio?: string;
 };
 
-/**
- *
- * LazyImage.tsx
- * @author Alisha Garric
- * @description Lazy loaded image component.
- *
- */
 
 export class LazyImage extends React.Component<Props, any> {
   // Update lazyLoad after first rendering of every image
@@ -79,3 +72,4 @@ export class LazyImage extends React.Component<Props, any> {
 }
 
 export default LazyImage;
+*/

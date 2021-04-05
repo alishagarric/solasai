@@ -9,7 +9,6 @@ import {
 } from "./styles.scss";
 
 //Components
-import LazyImage from "../../../utils/lazyImage";
 import { Fire } from "../../_svg/Icons/Fire";
 
 

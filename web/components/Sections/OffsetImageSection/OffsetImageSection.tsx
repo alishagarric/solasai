@@ -1,6 +1,5 @@
 // Core
 import React from "react";
-import LazyImage from "../../../utils/lazyImage";
 import { Inner } from "../../Inner";
 import { Anchor } from "../Anchor";
 

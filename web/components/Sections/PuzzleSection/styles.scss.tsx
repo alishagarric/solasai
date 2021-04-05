@@ -131,9 +131,50 @@ export const PuzzleSectionStyle = styled.section`
       }
     }
 
-    
-    @media (max-width: ${Base.Media.Width.Sm + "px"}), (max-width: ${Base.Media.Width.Md + "px"}) and (orientation: landscape) and (max-height: ${Base.Media.Height.Md + "px"}) {
+    @media (max-width: ${Base.Media.Width.Md + "px"}) {
 
+      .${PuzzleSectionClassName}__container {
+        max-width: 600px;
+        width: 100%;
+
+        .${PuzzleSectionClassName}__headline {
+          padding-bottom: calc(${Root.Size} * 2);
+        }
+
+        .${PuzzleSectionClassName}__content {
+          flex-direction: column;
+
+          &__body {
+            min-height: auto;
+          }
+
+          &__pieces {
+            &__container {
+              margin-left: 15%;
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: ${Base.Media.Width.Sm + "px"}) {
+      .${PuzzleSectionClassName}__container {
+
+        .${PuzzleSectionClassName}__content {
+
+          &__body {
+            padding-right: 0;
+          }
+
+          &__pieces {
+            &__container {
+              padding-top: 100%;
+              width: 100%;
+              margin-left: 0;
+            }
+          }
+        }
+      }
     }
   }
 `;

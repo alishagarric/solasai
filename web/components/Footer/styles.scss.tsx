@@ -12,6 +12,7 @@
 // Core
 import styled from "styled-components";
 import { Root } from "../../constants/Root";
+import { Base } from "../../constants/styles/Base";
 import { Font } from "../../constants/styles/Font";
 import { Theme } from "../../constants/Theme";
 import { BlueBirdClassName } from "../_svg/Birds/BlueBird";
@@ -42,10 +43,13 @@ export const FooterStyle = styled.footer`
       pointer-events: none;
     }
 
-    .${FooterClassName}__headline, .${FooterClassName}__container {
-      padding-left: 10%;
+    .${FooterClassName}__headline, .${FooterClassName}__container, .${FooterClassName}__bottom {
       position: relative;
       z-index: 1;
+    }
+
+    .${FooterClassName}__headline, .${FooterClassName}__container {
+      padding-left: 10%;
     }
 
     .${FooterClassName}__headline {
@@ -60,6 +64,7 @@ export const FooterStyle = styled.footer`
       display: flex;
       flex-direction: column;
       align-items: center;
+
 
       svg {
         path {
@@ -147,5 +152,58 @@ export const FooterStyle = styled.footer`
         }
       }
     }
+
+    @media (max-width: ${Base.Media.Width.Md + "px"}) {
+      .${FooterClassName}__container {
+        .${FooterClassName}__form {
+          flex: 1;
+
+          form {
+            flex-direction:  column;
+
+            input, textarea {
+              min-width: 300px;
+            }
+          }
+        }
+
+        .${FooterClassName}__details {
+          flex: 1;
+        }
+      }
+    }
+
+    @media (max-width: ${Base.Media.Width.Sm + "px"}) {
+
+      .${FooterClassName}__headline {
+        padding-bottom: ${Root.Size};
+      }
+
+      .${FooterClassName}__container {
+        flex-direction: column;
+
+        .${FooterClassName}__form {
+          margin-top: ${Root.Size};
+
+          form {
+            input, textarea {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+
+      .${FooterClassName}__headline, .${FooterClassName}__container {
+        padding-left: 0;
+      }
+
+      .${BlueBirdClassName} {
+        bottom: 0;
+        width: 70%;
+        left: -10%;
+        height: auto;
+        top: auto;
+      }
+    } 
   }
 `;

@@ -43,7 +43,16 @@ export const ColumnIconBlocksStyle = styled.div`
       }
     }
 
-    @media (max-width: ${Base.Media.Width.Sm + "px"}), (max-width: ${Base.Media.Width.Md + "px"}) and (orientation: landscape) and (max-height: ${Base.Media.Height.Md + "px"}) {
+    @media (max-width: ${Base.Media.Width.Sm + "px"}) {
+      .${ColumnIconBlocksClassName}__block {
+        padding: 0 0 var(--verticalSpace) 0;
+        
+
+        &__label {
+          padding-left: calc(${Root.Size} / 2);
+          padding-right: calc(${Root.Size} / 2);
+        }
+      }
 
     }
   }

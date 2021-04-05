@@ -60,6 +60,7 @@ export const CtaRowStyle = styled.section`
       flex-direction: column;
       align-items: center;
       text-align: center;
+      padding-top: ${Root.Size};
 
       max-width: 600px;
       margin: 0 auto;

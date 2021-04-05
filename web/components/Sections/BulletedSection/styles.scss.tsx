@@ -14,6 +14,7 @@ import styled, { keyframes } from "styled-components";
 import { Root } from "../../../constants/Root";
 import { Base } from "../../../constants/styles/Base";
 import { Theme } from "../../../constants/Theme";
+import { RedBird, RedBirdClassName } from "../../_svg/Birds/RedBird";
 import { CheckmarkClassName } from "../../_svg/Icons/Checkmark";
 
 // Constants
@@ -74,9 +75,48 @@ export const BulletedSectionStyle = styled.section`
       }
     }
 
-    
-    @media (max-width: ${Base.Media.Width.Sm + "px"}), (max-width: ${Base.Media.Width.Md + "px"}) and (orientation: landscape) and (max-height: ${Base.Media.Height.Md + "px"}) {
+    @media (max-width: ${Base.Media.Width.Md + "px"}) {
+      .${BulletedSectionClassName}__container {
+        width: 100%;
 
+        .${BulletedSectionClassName}__headline {
+          padding-left: calc(${Root.Size} * 3);
+          padding-right: calc(${Root.Size} * 3);
+        }
+
+        .${BulletedSectionClassName}__content {
+          flex-direction: column;
+
+          &__body {
+            padding-left: calc(${Root.Size} * 3);
+            padding-right: calc(${Root.Size} * 3);
+          }
+
+          &__body {
+            + .${BulletedSectionClassName}__content__children {
+              width: calc(100% + 1.5rem);
+              margin-left: calc(.75rem * -1);
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: ${Base.Media.Width.Sm + "px"}) {
+      .${BulletedSectionClassName}__container {
+        .${BulletedSectionClassName}__headline {
+          padding-left: 0;
+          padding-right: 0;
+        }
+
+        .${BulletedSectionClassName}__content {
+
+          &__body {
+            padding-left: 0;
+            padding-right: 0;
+          }
+        }
+      }
     }
   }
 `;

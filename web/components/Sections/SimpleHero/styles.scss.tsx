@@ -15,6 +15,8 @@ import { Root } from "../../../constants/Root";
 import { Base } from "../../../constants/styles/Base";
 import { Theme } from "../../../constants/Theme";
 import { BirdClassName } from "../../_svg/Birds/Bird";
+import { LogoClassName } from "../../_svg/Logos/Logo";
+import { LogotypeClassName } from "../../_svg/Logos/Logotype";
 
 // Constants
 
@@ -29,6 +31,7 @@ export const SimpleHeroStyle = styled.section`
   &.${SimpleHeroClassName} {
     position: relative;
     background-color: ${Theme.Color.Background};
+    overflow: hidden;
 
     .${SimpleHeroClassName}__grid {
       display: grid;
@@ -75,15 +78,36 @@ export const SimpleHeroStyle = styled.section`
 
     .${BirdClassName} {
       position: absolute;
-      top: 0;
-      height: 100%;
+      top: 90px;
+      height: calc(100% - 90px);
       width: auto;
       left: 50%;
       transform: translateX(-50%);
       z-index: 0;
     }
 
-    @media (max-width: ${Base.Media.Width.Sm + "px"}), (max-width: ${Base.Media.Width.Md + "px"}) and (orientation: landscape) and (max-height: ${Base.Media.Height.Md + "px"}) {
+    @media (max-width: ${Base.Media.Width.Sm + "px"}) {
+      .${SimpleHeroClassName}__grid {
+        .${LogotypeClassName} {
+          width: 80vw;
+          height: auto;
+          max-width: 455px;
+        }
+
+        &__text__headline {
+          margin-left: 0;
+          margin-right: 0;
+        }
+
+        &__guide:after {
+          margin: calc(${Root.Size}) 0 calc(${Root.Size}) 0;
+        }
+      }
+
+      .${BirdClassName} {
+        height: 70vh;
+        top: 15vh;
+      }
 
     }
   }

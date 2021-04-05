@@ -12,7 +12,11 @@
 // Core
 import styled from "styled-components";
 import { Root } from "../../constants/Root";
+import { Base } from "../../constants/styles/Base";
+import { Theme } from "../../constants/Theme";
 import { ButtonClassName } from "../Sections/Button/styles.scss";
+import { RedBirdClassName } from "../_svg/Birds/RedBird";
+import { LogoClassName } from "../_svg/Logos/Logo";
 
 // Begin Styles
 //////////////////////////////////////////////////////////////////////
@@ -30,6 +34,13 @@ export const NavigationStyle = styled.nav`
     top: 0;
     padding: 0 ${Root.Size};
     align-items: center;
+    background: ${Theme.Color.Background};
+
+    .${NavigationClassName}__logo {
+      .${RedBirdClassName} {
+        display: none;
+      }
+    }
 
     .${NavigationClassName}__links {
       display: flex;
@@ -57,6 +68,57 @@ export const NavigationStyle = styled.nav`
 
       .${ButtonClassName} {
         margin-top: 0;
+        background: ${Theme.Color.Secondary};
+
+        a, div {
+          color: ${Theme.Color.White};
+        }
+        
+      }
+    }
+
+    @media (max-width: ${Base.Media.Width.Lg + "px"}) {
+      .${NavigationClassName}__logo {
+        .${LogoClassName} {
+          height: 40px;
+          width: auto;
+        }
+      }
+    }
+
+    @media (max-width: ${Base.Media.Width.Md + "px"}) {
+      padding: 0 5px 0 ${Root.Size};
+      
+      .${NavigationClassName}__logo {
+
+        .${RedBirdClassName} {
+          display: block;
+          height: 40px;
+          margin-top: 5px;
+          margin-bottom: 5px;
+          width: auto;
+        }
+
+        .${LogoClassName} {
+          display: none;
+        }
+      }
+
+      .${NavigationClassName}__links {
+        &__list {
+          display: none;
+        }
+
+        .${ButtonClassName} {
+
+          a, div {
+            height: 40px;
+            padding-top: 0;
+            padding-bottom: 0;
+            display: grid;
+            place-content: center;
+          }
+        }
       }
     }
   }

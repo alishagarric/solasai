@@ -80,12 +80,5 @@ export const ArrowModelStyle = styled.div`
       }
 
     }
-
-    @media (max-width: ${Base.Media.Width.Sm + "px"}), (max-width: ${Base.Media.Width.Md + "px"}) and (orientation: landscape) and (max-height: ${Base.Media.Height.Md + "px"}) {
-
-      p {
-        font-size: 9vw;
-      }
-    }
   }
 `;

@@ -38,6 +38,12 @@ export const ButtonStyle = styled.div`
       display: block;
     }
 
+    @media (max-width: ${Base.Media.Width.Lg + "px"}) {
+      a, div {
+        padding: ${Root.Size} calc(${Root.Size} * 1.5);
+      }
+    }
+
     @media (max-width: ${Base.Media.Width.Sm + "px"}), (max-width: ${Base.Media.Width.Md + "px"}) and (orientation: landscape) and (max-height: ${Base.Media.Height.Md + "px"}) {
 
     }

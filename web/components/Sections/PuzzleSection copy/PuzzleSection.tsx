@@ -42,7 +42,7 @@ export const PuzzleSection: React.FunctionComponent<LMNTS_Section_PuzzleSection>
   return (
     <PuzzleSectionStyle className={`${PuzzleSectionClassName}`}>
       <Inner className={`${PuzzleSectionClassName}__inner`}>
-        {headline && <h2 className={`${PuzzleSectionClassName}__headline`}>{headline}</h2>}
+        {headline && <h2 className={`${PuzzleSectionClassName}__headline h3`}>{headline}</h2>}
 
         <div className={`${PuzzleSectionClassName}__content`}>
           <div className={`${PuzzleSectionClassName}__content__body`}>

@@ -71,10 +71,30 @@ export const OffsetImageSectionStyle = styled.section`
           top: 10%;
         }
       }
-
-
     }
 
+    @media (max-width: ${Base.Media.Width.Md + "px"}) {
+      .${OffsetImageSectionClassName}__headline, .${OffsetImageSectionClassName}__content {
+        margin: 0 auto;
+        max-width: 600px;
+      }
+
+      .${OffsetImageSectionClassName}__headline {
+        width: 100%;
+        text-align: center;
+      }
+
+      .${OffsetImageSectionClassName}__content {
+        &__children {
+          flex: 0 0 100%;
+          padding-right: 0;
+        }
+
+        &__image {
+          display: none;
+        }
+      }
+    }
     
     @media (max-width: ${Base.Media.Width.Sm + "px"}), (max-width: ${Base.Media.Width.Md + "px"}) and (orientation: landscape) and (max-height: ${Base.Media.Height.Md + "px"}) {
 

@@ -37,7 +37,7 @@ export const BlurredItemsSection: React.FunctionComponent<LMNTS_Section_BlurredI
   return (
     <BlurredItemsSectionStyle className={`${BlurredItemsSectionClassName}`}>
       <Inner className={`${BlurredItemsSectionClassName}__inner`}>
-        {headline && <h2 className={`${BlurredItemsSectionClassName}__headline`}>{headline}</h2>}
+        {headline && <h2 className={`${BlurredItemsSectionClassName}__headline h3`}>{headline}</h2>}
 
         <div className={`${BlurredItemsSectionClassName}__content`}>
 

@@ -87,6 +87,19 @@ export const BracketSectionStyle = styled.section`
       }
     }
 
+    @media (max-width: ${Base.Media.Width.Md + "px"}) {
+      .${BracketSectionClassName}__content {
+        max-width: 600px;
+        
+        .${BracketSectionClassName}__blocks {
+          &__block {
+            flex: 0 0 50%;
+          }
+        }
+
+      }
+    }
+
     @media (max-width: ${Base.Media.Width.Sm + "px"}), (max-width: ${Base.Media.Width.Md + "px"}) and (orientation: landscape) and (max-height: ${Base.Media.Height.Md + "px"}) {
 
     }

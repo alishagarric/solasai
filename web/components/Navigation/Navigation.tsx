@@ -9,6 +9,7 @@
 // Core
 import React from "react";
 import { Button } from "../Sections/Button";
+import { RedBird } from "../_svg/Birds/RedBird";
 import { Logo } from "../_svg/Logos/Logo";
 
 // Styles
@@ -43,15 +44,7 @@ export type NavigationData = {
   
       this.state = {
       };
- 
-      //this.function = this.function.bind(this);
    }
- 
-   /*
-   function() {
-     this.setState({});
-   }
-   */
 
   componentDidMount(){
 
@@ -64,6 +57,7 @@ export type NavigationData = {
       <NavigationStyle className={`${NavigationClassName}`}>
         <div className={`${NavigationClassName}__logo`}>
           <Logo />
+          <RedBird />
         </div>
 
         <div className={`${NavigationClassName}__links`}>
@@ -78,7 +72,7 @@ export type NavigationData = {
               <p><a href="#why-now">Why Now</a></p>
             </li>
             <li className={`${NavigationClassName}__links__list__item`}>
-              <p><a href="#why-solasai">Why Choose SolasAI</a></p>
+              <p><a href="#why-solasai">Why SolasAI</a></p>
             </li>
           </ul>
           <Button link="#contact" label="Contact Us" />

@@ -31,11 +31,11 @@ export const Footer: React.FunctionComponent<Footer> = ({ }) => {
       <Anchor id="contact" />
       <BlueBird />
       <Inner>
-          <h2 className={`${FooterClassName}__headline`}>Contact Us</h2>
+          <h2 className={`${FooterClassName}__headline h3`}>Contact Us</h2>
           <div className={`${FooterClassName}__container`}>
 
             <div className={`${FooterClassName}__details`}>
-              <h3 className={`${FooterClassName}__details__subheadline`}>Reach Us Directly</h3>
+              <h3 className={`${FooterClassName}__details__subheadline h4`}>Reach Us Directly</h3>
 
               <div className={`${FooterClassName}__details__row`}>
                 <Email />

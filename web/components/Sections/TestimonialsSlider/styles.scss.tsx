@@ -91,18 +91,18 @@ export const TestimonialsSliderStyle = styled.section`
 
         .slick-arrow {
           height: 40px;
-            width: 40px;
-            border-top: 4px solid ${Theme.Color.Secondary};
-            border-right: 4px solid ${Theme.Color.Secondary};
-            transform: rotate(45deg);
-            display: block;
-            opacity: 1;
-            bottom: 50%;
-            top: auto;
+          width: 40px;
+          border-top: 4px solid ${Theme.Color.Secondary};
+          border-right: 4px solid ${Theme.Color.Secondary};
+          transform: rotate(45deg);
+          display: block;
+          opacity: 1;
+          bottom: 50%;
+          top: auto;
 
-            &:before {
-              content: none;
-            }
+          &:before {
+            content: none;
+          }
 
           &.slick-prev {
             transform: scaleX(-1) rotate(45deg);
@@ -112,8 +112,41 @@ export const TestimonialsSliderStyle = styled.section`
     }
 
     
-    @media (max-width: ${Base.Media.Width.Sm + "px"}), (max-width: ${Base.Media.Width.Md + "px"}) and (orientation: landscape) and (max-height: ${Base.Media.Height.Md + "px"}) {
+    @media (max-width: ${Base.Media.Width.Sm + "px"}) {
+      margin-top: calc(${Root.Size} * 4);
+      margin-bottom: calc(${Root.Size} * 4);
 
+      .${TestimonialsSliderClassName}__container {
+        width: 100%;
+
+        .${TestimonialsSliderClassName}__slider {
+          .slick-arrow {
+            height: 20px;
+            width: 20px;
+            bottom: 0;
+            z-index: 10;
+            display: none !important;
+
+            &.slick-prev {
+              transform: scaleX(-1) rotate(45deg) translateY(100%);
+              left: 20px;
+            }
+
+            &.slick-next {
+              transform: translateY(100%) rotate(-45deg);
+              right: 20px;
+            }
+          }
+
+          .slick-dots {
+            li button {
+              height: 10px;
+              width: 10px;
+              padding: 0;
+            }
+          }
+        }
+      }
     }
   }
 `;

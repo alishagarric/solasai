@@ -79,6 +79,7 @@ export const InteractiveCardsStyle = styled.section`
 
           &__item {
             cursor: pointer;
+            white-space: nowrap;
 
             &:not(.__active) {
               opacity: 0.5;
@@ -228,8 +229,121 @@ export const InteractiveCardsStyle = styled.section`
       }
     }
 
-    @media (max-width: ${Base.Media.Width.Sm + "px"}), (max-width: ${Base.Media.Width.Md + "px"}) and (orientation: landscape) and (max-height: ${Base.Media.Height.Md + "px"}) {
+    @media (max-width: ${Base.Media.Width.Md + "px"}) {
+      padding-left: calc(${Root.Size} * 3);
+      padding-right: calc(${Root.Size} * 3);
 
+      .${CircleDecorClassName} {
+        left: auto;
+        right: 0;
+        transform: rotate(-90deg);
+      }
+
+      .${InteractiveCardsClassName}__content {
+        width: 100%;
+
+        .${InteractiveCardsClassName}__card-sets {
+
+          &__cards {
+            width: 100%;
+            justify-content: flex-start;
+
+            .${InteractiveCardsClassName}__card {
+              flex: 0 0 calc(50% - ${Root.Size});
+              padding-top: 0;
+              margin-right: ${Root.Size};
+              margin-bottom: ${Root.Size};
+
+              &:nth-of-type(odd) {
+                margin-right: ${Root.Size};
+                margin-left: 0;
+              }
+
+              &:nth-of-type(even) {
+                margin-left: ${Root.Size};
+                margin-right: 0;
+              }
+
+              &__inner {
+                position: relative;
+                width: 100%;
+                height: 100%;                
+
+                &__back {
+                  opacity: 1;
+                  position: relative;
+                  top: 0;
+                  left: 0;
+                  bottom: 0;
+                  right: 0;
+                  transform: none;
+                  margin-top: calc(${Root.Size} * 1.5);
+                  padding-top: calc(${Root.Size} * 1);
+                  border-top: 1px solid ${Theme.Color.Text};
+
+                  &:before {
+                    content: "";
+                    height: 0px;
+                    display: block;
+                    width: 0px;
+                    border-left: 15px solid transparent;
+                    border-right: 15px solid transparent;
+                    border-top: 15px solid ${Theme.Color.Secondary};
+                    opacity: 0.43;
+                    margin-bottom: ${Root.Size};
+                  }
+                }
+
+                &:hover { 
+                  transform: none;
+                  .${InteractiveCardsClassName}__card__inner {
+                    &__front, &__index, &__label {
+                      opacity: 1;
+                    }
+                  }
+                }
+              }
+
+              &:after {
+                content: none;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: ${Base.Media.Width.Sm + "px"}) {
+      padding-left: 0;
+      padding-right: 0;
+
+      .${BirdClassName}, .${CircleDecorClassName} {
+        display: none;
+      }
+
+      .${InteractiveCardsClassName}__content {
+        position: relative;
+
+        .${InteractiveCardsClassName}__header {
+         overflow: auto;
+        }
+
+        .${InteractiveCardsClassName}__card-sets {
+          &__cards {
+            .${InteractiveCardsClassName}__card {
+              flex: 0 0 100%;
+
+              &:nth-of-type(odd) {
+                margin-right: 0;
+              }
+
+              &:nth-of-type(even) {
+                margin-left: 0;
+              }
+            }
+          }
+        }
+      }
     }
   }
 `;

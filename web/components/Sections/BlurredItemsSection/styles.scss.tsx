@@ -49,7 +49,7 @@ export const BlurredItemsSectionStyle = styled.section`
       align-items: center;
 
       &__body {
-        padding-left: calc(${Root.Size} * 2) ;
+        padding-left: calc(${Root.Size} * 2);
         flex: 4;
 
         > * {
@@ -141,9 +141,42 @@ export const BlurredItemsSectionStyle = styled.section`
       }
     }
 
-    
-    @media (max-width: ${Base.Media.Width.Sm + "px"}), (max-width: ${Base.Media.Width.Md + "px"}) and (orientation: landscape) and (max-height: ${Base.Media.Height.Md + "px"}) {
+    @media (max-width: ${Base.Media.Width.Md + "px"}) {
+      .${BlurredItemsSectionClassName}__content {
+        width: 100%;
+        max-width: 600px;
+        flex-direction: column-reverse;
 
+        &__blurred-items {
+          padding-top: 100%;
+          width: 100%;
+
+          &__focused {
+            &:after {
+              height: 50%;
+              top: -50%;
+              left: 50%;
+              transform: translateX(-50%);
+              width: 2px;
+            }
+          }
+        }
+
+        &__body {
+          padding-left: 0;
+        }
+      }
+    }
+
+    
+    @media (max-width: ${Base.Media.Width.Sm + "px"}) {
+      .${BlurredItemsSectionClassName}__content {
+        &__body {
+          > * {
+            max-width: none;
+          }
+        }
+      }
     }
   }
 `;

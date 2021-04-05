@@ -56,9 +56,9 @@ const HomePage: NextPage<HomePage> = () => {
         <ColumnIconBlocks 
           icons={[
             { icon: <NumberEye />, label: "Detects and quantifies algorithmic disparities" },
-            { icon: <Illuminate />, label: "Illuminate drivers of discrimination" },
+            { icon: <Illuminate />, label: "Illuminate drivers of disparities" },
             { icon: <Bullseye />, label: "Clarify drivers of predictive value" },
-            { icon: <GamePlay />, label: "Auto-generate fairer alternatives" },
+            { icon: <GamePlay />, label: "Auto-generate viable alternatives with less disparity alternatives" },
           ]}
         />
         <Button label="Download Whitepaper" link="/" />
@@ -76,10 +76,10 @@ const HomePage: NextPage<HomePage> = () => {
             label: "Modeler",
             cards: [
               { front_text: "You are the best at building models for your company - We don’t ask you to change", back_text: "We use your models" },
-              { front_text: "We take testing for discrimination off your plate so you can focus on predictive value for your company", back_text: "We expose disparities" },
+              { front_text: "We take testing for disparity and alternatives off your plate", back_text: "We expose disparities" },
               { front_text: "We provide you additional insight to make your model better", back_text: "We explain what drives value and disparities" },
               { front_text: "We preserve and expand the great work you have done", back_text: "We create alternatives without sacrificing predictive value" },
-              { front_text: "We generate the documentation and insights you need to choose the best, fair alternative for you business", back_text: "We generate the information you need to make justifiable choices" }
+              { front_text: "We generate the documentation and insights you need to choose the best, best viable alternative for you business", back_text: "We generate the information you need to make justifiable choices" }
             ]
           },
           {
@@ -109,18 +109,18 @@ const HomePage: NextPage<HomePage> = () => {
         headline="Why does your business need a robust model fairness pipeline?"
         body={{__html: `<p class="p-lg">Multiple forces are converging.</p><p class="p-lg">Enterprises must gain deep insight into their predictive models.</p>`}}
         bullets={[
-          "Test for discrimination",
-          "Identify opportunities to improve fairness",
-          "Provide clarity on trade-off decisions between business value and maximum fairness",
+          "Test for disparities",
+          "Identify opportunities to reduce disparities",
+          "Provide clarity on trade-off decisions between business value and reducing disparities",
         ]}
       >
         <ArrowModel 
           items={[
-            "Increased Model Usage",
-            "Increased Model Risks",
+            "Increased model usage",
+            "Increased model risks",
             "Increased societal awareness",
             "Increased focus from regulators",
-            "Regulators and courts looking to make precedents"
+            "Regulators and courts looking to establish precedent"
           ]}
         />
       </BulletedSection>
@@ -136,7 +136,7 @@ const HomePage: NextPage<HomePage> = () => {
       <PuzzleSection 
         headline="Why SolasAI Is Different"
         sub_headline="SolasAI goes beyond Data Science"
-        body={{__html: "<p>We approach the problem from multiple sides, and which makes us a one-stop shop for fairer model reconstruction.</p>"}}
+        body={{__html: "<p>We approach the problem from multiple sides, which makes us a one-stop shop for fairer model reconstruction.</p>"}}
         puzzle_pieces={[
           "Business Needs",
           "Data Science & Technology",
@@ -168,7 +168,7 @@ const HomePage: NextPage<HomePage> = () => {
           {label: "45 Years", text: "in Employment Discrimination Analytics" },
           {label: "25 Years", text: "in Fair Lending Analytics" },
           {label: "Fortune 50", text: "we advise over 50% of these companies" },
-          {label: "Trusted Fair Lending", text: "used by virtually every major lending institution in the U.S" },
+          {label: "Trusted Fair Lending", text: "framework used by virtually every major lending institution in the U.S" },
           {label: "Expert Consultants", text: "to numerous Federal, State, and Local Regulators" }
         ]}
         image="/img/helixs.png"

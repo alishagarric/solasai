@@ -9,6 +9,8 @@ import {
 
 //Components
 import Link from "next/link";
+import AnchorLink from 'react-anchor-link-smooth-scroll'
+
 
 // Begin Component
 // __________________________________________________________________________________________
@@ -35,11 +37,9 @@ export const Button: React.FunctionComponent<LMNTS_Section_Button> = ({
   if (link){
     return (
       <ButtonStyle className={`${ButtonClassName}`}>
-        <Link href={link}>
-          <a target={target ? target : "_self"} className="txt-caption">
-            {label}
-          </a>
-        </Link>
+        <AnchorLink href={link} target={target ? target : "_self"} className="txt-caption">
+          {label}
+        </AnchorLink>
       </ButtonStyle>
     );
   } else {

@@ -40,6 +40,12 @@ export const NavigationStyle = styled.nav`
     padding: 0 ${Root.Size};
     align-items: center;
     background: ${Theme.Color.Background};
+    will-change: transform;
+    transition: transform .25s ease;
+
+    &.__hidden {
+      transform: translateY(-90px);
+    }
 
     .${NavigationClassName}__logo {
       .${BrandmarkClassName} {
@@ -201,6 +207,10 @@ export const NavigationOverlayStyle = styled.nav`
 
     &.__active {
       display: flex;
+
+      ~ main, ~ footer {
+        display: none;
+      }
     }
   }
 `;

@@ -8,10 +8,13 @@
 
 // Core
 import React from "react";
+import AnchorLink from 'react-anchor-link-smooth-scroll'
+import { Base } from "../../constants/styles/Base";
+import { Theme } from "../../constants/Theme";
+
 import { Button } from "../Sections/Button";
 import { ContactInfo } from "../Sections/ContactInfo";
 import { BlueBird } from "../_svg/Birds/BlueBird";
-import { RedBird } from "../_svg/Birds/RedBird";
 import { Brandmark } from "../_svg/Brandmark/Brandmark";
 import { Exit } from "../_svg/Icons/Exit";
 import { Hamburger } from "../_svg/Icons/Hamburger";
@@ -30,6 +33,8 @@ export type NavigationData = {
 
  export type NavigationState = {
   overlayActive: boolean;
+  navHidden: boolean;
+  scrollAmount: number;
  }
  
  /**
@@ -49,9 +54,17 @@ export type NavigationData = {
     
         this.state = {
           overlayActive: false,
+          navHidden: false,
+          scrollAmount: 0,
         };
 
+        if (typeof window === 'undefined') {
+          //@ts-ignore
+          global.window = {};
+        }
+
       this.updateOverlayNav = this.updateOverlayNav.bind(this);
+      this.handleScroll = this.handleScroll.bind(this);
     }
 
     updateOverlayNav( toggle: boolean) {
@@ -60,12 +73,41 @@ export type NavigationData = {
       });
     }
 
+    handleScroll(event: any){
+
+      let scrollDown = this.state.scrollAmount < window.scrollY ? true : false;
+
+      this.setState({
+        scrollAmount: window.scrollY,
+      });
+
+      if (scrollDown == true && !(this.state.scrollAmount < 50) && (window.innerWidth < Base.Media.Width.Md)) {
+        this.setState({
+          navHidden: true,
+        });
+      } else {
+        this.setState({
+          navHidden: false,
+        });
+      }
+
+    }
+
+    componentDidMount() {
+      window.addEventListener('scroll', this.handleScroll, { passive: true })
+    }
+  
+    componentWillUnmount() {
+      window.removeEventListener('scroll', this.handleScroll)
+    }
+  
+
 
   render() {
 
     return (
       <>
-        <NavigationStyle className={`${NavigationClassName}`}>
+        <NavigationStyle className={`${NavigationClassName} ${this.state.navHidden ? "__hidden" : ""}`}>
           <div className={`${NavigationClassName}__logo`}>
             <Logo />
             <div className={`${NavigationClassName}__logo__menu-toggle`} onClick={() => this.updateOverlayNav(true)}>
@@ -77,16 +119,16 @@ export type NavigationData = {
           <div className={`${NavigationClassName}__links`}>
             <ul className={`${NavigationClassName}__links__list`}>
               <li className={`${NavigationClassName}__links__list__item`}>
-                <p><a href="#product">Our Product</a></p>
+                <p><AnchorLink href="#product">Our Product</AnchorLink></p>
               </li>
               <li className={`${NavigationClassName}__links__list__item`}>
-                <p><a href="#how">How It Works</a></p>
+                <p><AnchorLink href="#how">How It Works</AnchorLink></p>
               </li>
               <li className={`${NavigationClassName}__links__list__item`}>
-                <p><a href="#why-now">Why Now</a></p>
+                <p><AnchorLink href="#why-now">Why Now</AnchorLink></p>
               </li>
               <li className={`${NavigationClassName}__links__list__item`}>
-                <p><a href="#why-solasai">Why SolasAI</a></p>
+                <p><AnchorLink href="#why-solasai">Why SolasAI</AnchorLink></p>
               </li>
             </ul>
             <Button link="#contact" label="Contact Us" />

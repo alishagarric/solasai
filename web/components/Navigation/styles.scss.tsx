@@ -211,6 +211,10 @@ export const NavigationOverlayStyle = styled.nav`
       ~ main, ~ footer {
         display: none;
       }
+
+      @media (min-width: ${Base.Media.Width.Md + "px"}) {
+        display: none;
+      }
     }
   }
 `;

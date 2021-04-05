@@ -65,9 +65,5 @@ export const CtaRowStyle = styled.section`
       max-width: 600px;
       margin: 0 auto;
     }
-
-    @media (max-width: ${Base.Media.Width.Sm + "px"}), (max-width: ${Base.Media.Width.Md + "px"}) and (orientation: landscape) and (max-height: ${Base.Media.Height.Md + "px"}) {
-
-    }
   }
 `;

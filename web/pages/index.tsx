@@ -76,17 +76,17 @@ const HomePage: NextPage<HomePage> = () => {
             label: "Modeler",
             cards: [
               { front_text: "You are the best at building models for your company - We don’t ask you to change", back_text: "We use your models" },
-              { front_text: "We take testing for disparity and alternatives off your plate", back_text: "We expose disparities" },
+              { front_text: "We take testing for disparity and alternatives off your plate", back_text: "We expose and quantify disparities" },
               { front_text: "We provide you additional insight to make your model better", back_text: "We explain what drives value and disparities" },
               { front_text: "We preserve and expand the great work you have done", back_text: "We create alternatives without sacrificing predictive value" },
-              { front_text: "We generate the documentation and insights you need to choose the best, best viable alternative for you business", back_text: "We generate the information you need to make justifiable choices" }
+              { front_text: "We generate the documentation and insights you need to choose the best viable alternative for you business", back_text: "We generate the information you need to make justifiable choices" }
             ]
           },
           {
             label: "Compliance / Legal",
             cards: [
               { front_text: "You don't have to get your modelers to change", back_text: "We use your models" },
-              { front_text: "We test using accepted standards that will give you the greatest protection possible", back_text: "We expose disparities" },
+              { front_text: "We test using accepted standards that will give you the greatest protection possible", back_text: "We expose and quantify disparities" },
               { front_text: "We openly clarify what is happening in the models so you understand it", back_text: "We explain what drives value and disparities" },
               { front_text: "We generate justifiable alternatives that have a minor impact on predictive value", back_text: "We create alternatives without sacrificing predictive value" },
               { front_text: "We provide you the information you need to choose the best alternative for your business and justify it to regulators", back_text: "We generate the information you need to make justifiable choices" }
@@ -96,8 +96,8 @@ const HomePage: NextPage<HomePage> = () => {
             label: "Chief data officer",
             cards: [
               { front_text: "We aren't trying to replace your modelers - we just want to make them more efficient", back_text: "We use your models" },
-              { front_text: "We continually update our testing module based on the latest guidance, research and accepted standards", back_text: "We expose disparities" },
-              { front_text: "We illuminate what is driving value and disparities in the models", back_text: "We explain what drives value and disparities" },
+              { front_text: "We continually update our testing module based on the latest guidance, research and accepted standards", back_text: "We expose and quantify disparities" },
+              { front_text: "We illuminate what is driving value and disparity in the models", back_text: "We explain what drives value and disparities" },
               { front_text: "We generate viable alternatives that ensure overall model quality", back_text: "We create alternatives without sacrificing predictive value" },
               { front_text: "We provide your subject matter experts the best alternatives and supporting information to grow and protect your business", back_text: "We generate the information you need to make justifiable choices" }
             ]
@@ -178,9 +178,9 @@ const HomePage: NextPage<HomePage> = () => {
       <TestimonialsSlider 
         headline="Who We’ve Helped"
         testimonials= {[
-          {testimonial: "SolasAI achieved 50% decrease in a model’s gender and race disparities while seeing only a small, but acceptable, loss in model performance.", author: "Fintech, Client"},
-          {testimonial: "SolasAI achieved 50% decrease in a model’s gender and race disparities while seeing only a small, but acceptable, loss in model performance.", author: "Fintech, Client"},
-          {testimonial: "SolasAI achieved 50% decrease in a model’s gender and race disparities while seeing only a small, but acceptable, loss in model performance.", author: "Fintech, Client"},
+          {testimonial: "Reduced the time required to perform fair lending assessments and DI mitigation search by over 60%.", author: "Top-10 US Consumer Lender"},
+          {testimonial: "Reduced a credit model’s gender and race disparities by half with only a marginal loss in performance.", author: "FinTech Client"},
+          {testimonial: "Doubled the predictive value for protected classes in a model healthcare model.", author: "Fortune 50 Healthcare Customer"},
         ]}
       />
     </div>

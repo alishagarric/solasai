@@ -14,6 +14,7 @@ import styled, { keyframes } from "styled-components";
 import { Root } from "../../../constants/Root";
 import { Base } from "../../../constants/styles/Base";
 import { Theme } from "../../../constants/Theme";
+import { hexToRGB } from "../../../utils/hexToRGB";
 import { BirdClassName } from "../../_svg/Birds/Bird";
 import { CircleDecorClassName } from "../../_svg/CircleDecor/CircleDecor";
 import { ButtonClassName } from "../Button/styles.scss";
@@ -61,6 +62,10 @@ export const InteractiveCardsStyle = styled.section`
       margin-left: auto;
       margin-right: auto;
 
+      > .${ButtonClassName} {
+        display: none;
+      }
+
       .${InteractiveCardsClassName}__headline {
         padding-bottom: calc(${Root.Size} * 2);
         width: 100%;
@@ -73,6 +78,23 @@ export const InteractiveCardsStyle = styled.section`
         position: relative;
         z-index: 1;
         margin-bottom: calc(${Root.Size} * 2);
+
+        > .${ButtonClassName} {
+          margin-top: 0;
+          
+          a, div {
+            padding-left: 0;
+            padding-right: 0;
+            border: none;
+            flex-direction: row;
+            text-align: center;
+
+            svg {
+              display: inline;
+              margin-right: 10px;
+            }
+          }
+        }
 
         &__card-sets-nav {
           display: flex;
@@ -136,8 +158,8 @@ export const InteractiveCardsStyle = styled.section`
               height: 80%;
               background: ${Theme.Color.White};
               padding: 5% 10% 5% 5%;
-              will-change: transform;
-              transition: transform 0.5s linear 0s;
+              will-change: transform, background-color, color;
+              transition: transform 0.5s linear 0s, color 0.5s linear 0s, background-color 0.5s linear 0s; ;
               cursor: pointer;
 
               &__label {
@@ -147,11 +169,10 @@ export const InteractiveCardsStyle = styled.section`
               &__back {
                 opacity: 0;
                 position: absolute;
-                top: 5%;
+                top: 50%;
                 left: 5%;
-                bottom: 5%;
                 right: 10%;
-                transform: scaleX(-1);
+                transform: scaleX(-1) translateY(-50%);
               }
 
               &__back, &__front {
@@ -180,13 +201,20 @@ export const InteractiveCardsStyle = styled.section`
               }
 
               &:hover {
+                box-shadow: 0px 0px 0 5px ${hexToRGB(Theme.Color.Grey, 0.25)};
+              }
+
+              &.__active {
                 transform: scaleX(-1);
+                background-color: ${Theme.Color.Text};
+                color: ${Theme.Color.White};
 
                 .${InteractiveCardsClassName}__card__inner__back {
                   opacity: 1;
                 }
 
                 .${InteractiveCardsClassName}__card__inner {
+
                   &__front, &__index, &__label {
                     opacity: 0;
                   }
@@ -242,6 +270,31 @@ export const InteractiveCardsStyle = styled.section`
       .${InteractiveCardsClassName}__content {
         width: 100%;
 
+        > .${ButtonClassName} {
+          display: flex;
+          position: relative;
+          z-index: 2;
+          
+          a, div {
+            padding-left: 0;
+            padding-right: 0;
+            border: none;
+            flex-direction: row;
+            text-align: center;
+
+            svg {
+              display: inline;
+              margin-right: 10px;
+            }
+          }
+        }
+
+        .${InteractiveCardsClassName}__header {
+          > .${ButtonClassName} {
+            display: none;
+          }
+        }
+
         .${InteractiveCardsClassName}__card-sets {
 
           &__cards {
@@ -294,8 +347,12 @@ export const InteractiveCardsStyle = styled.section`
                   }
                 }
 
-                &:hover { 
+                &__active { 
                   transform: none;
+                  background-color: ${Theme.Color.White};
+                  color: ${Theme.Color.Text};
+                  cursor: auto;
+
                   .${InteractiveCardsClassName}__card__inner {
                     &__front, &__index, &__label {
                       opacity: 1;
@@ -325,13 +382,18 @@ export const InteractiveCardsStyle = styled.section`
       .${InteractiveCardsClassName}__content {
         position: relative;
 
+        .${InteractiveCardsClassName}__headline {
+          padding-bottom: 0;
+        }
+
         .${InteractiveCardsClassName}__header {
           position: -webkit-sticky;
           position: sticky;
-          top: 50px;
+          top: 0px;
           z-index: 2;
           background: ${Theme.Color.Background};
           padding-bottom: 5px;
+          padding-top: 50px;
 
           &__card-sets-nav {
             width: 100%;

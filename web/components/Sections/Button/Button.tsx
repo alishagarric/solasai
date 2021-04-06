@@ -10,6 +10,7 @@ import {
 //Components
 import Link from "next/link";
 import AnchorLink from 'react-anchor-link-smooth-scroll'
+import { Download } from "../../_svg/Icons/Download";
 
 
 // Begin Component
@@ -40,6 +41,7 @@ export const Button: React.FunctionComponent<LMNTS_Section_Button> = ({
     return (
       <ButtonStyle className={`${ButtonClassName}`}>
         <a className="txt-caption" href={download} download>
+          <Download />
           {label}
         </a>
       </ ButtonStyle>

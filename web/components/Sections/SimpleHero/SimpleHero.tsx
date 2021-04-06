@@ -41,7 +41,7 @@ export const SimpleHero: React.FunctionComponent<LMNTS_Section_SimpleHero> = ({
 }) => {
 
   return (
-    <SimpleHeroStyle className={`${SimpleHeroClassName}`}>
+    <SimpleHeroStyle className={`${SimpleHeroClassName}`} id="top">
       <Inner className={`${SimpleHeroClassName}__inner`}>
         <Bird />
 
@@ -52,7 +52,7 @@ export const SimpleHero: React.FunctionComponent<LMNTS_Section_SimpleHero> = ({
             {logo && <Logotype />}
           </div>
 
-          {guide_text || cta && 
+          { (guide_text || cta) && 
             <p className={`${SimpleHeroClassName}__grid__guide txt-caption`}>
               <span>{guide_text}</span>
               {cta &&

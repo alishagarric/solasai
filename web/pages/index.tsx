@@ -61,7 +61,7 @@ const HomePage: NextPage<HomePage> = () => {
             { icon: <GamePlay />, label: "Auto-generate viable alternatives with less disparity alternatives" },
           ]}
         />
-        <Button label="Download Whitepaper" download="/files/SolasAI - Disparate Impact Mitigation and Proxy Detection Software.pdf"/>
+        {/*<Button label="Download Whitepaper" download="/files/SolasAI - Disparate Impact Mitigation and Proxy Detection Software.pdf"/>*/}
       </OffsetImageSection>
 
 
@@ -69,7 +69,7 @@ const HomePage: NextPage<HomePage> = () => {
         headline="How The SolasAI Platform Works"
         cta= {{
           label: "Download whitepaper",
-          link: "/"
+          download: "/files/SolasAI - Disparate Impact Mitigation and Proxy Detection Software.pdf",
         }}
         card_sets={[
           {
@@ -167,9 +167,9 @@ const HomePage: NextPage<HomePage> = () => {
         text_blocks={[
           {label: "45 Years", text: "in Employment Discrimination Analytics" },
           {label: "25 Years", text: "in Fair Lending Analytics" },
-          {label: "Fortune 50", text: "we advise over 50% of these companies" },
+          {label: "Expert Consultants", text: "to numerous Federal, State, and Local Regulators" },
           {label: "Trusted Fair Lending", text: "framework used by virtually every major lending institution in the U.S" },
-          {label: "Expert Consultants", text: "to numerous Federal, State, and Local Regulators" }
+          {label: "Fortune 50", text: "we advise over 50% of these companies" },
         ]}
         image="/img/helixs.png"
         alt="We don’t set out with the intention of reinventing or replacing your modeling process."

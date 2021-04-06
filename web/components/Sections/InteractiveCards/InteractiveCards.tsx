@@ -4,7 +4,7 @@ import { Inner } from "../../Inner";
 import { Bird } from "../../_svg/Birds/Bird";
 import { CircleDecor } from "../../_svg/CircleDecor/CircleDecor";
 import { Anchor } from "../Anchor";
-import { Button } from "../Button";
+import { Button, LMNTS_Section_Button } from "../Button";
 
 // Styles
 import {
@@ -17,11 +17,7 @@ import {
 
 export type LMNTS_Section_InteractiveCards = {
   headline?: string;
-  cta?: {
-    link: string;
-    label: string;
-    target?: string;
-  }
+  cta?: LMNTS_Section_Button;
   card_sets: {
     label: string;
     cards: {
@@ -33,6 +29,7 @@ export type LMNTS_Section_InteractiveCards = {
 
 export type InteractiveCardsState = {
   activeSet: number;
+  flippedCard: number;
  }
 
 /**
@@ -51,9 +48,11 @@ export type InteractiveCardsState = {
 
     this.state = {
       activeSet: 0,
+      flippedCard: -1,
     };
 
     this.updateActiveSet = this.updateActiveSet.bind(this);
+    this.updateFlippedCard = this.updateFlippedCard.bind(this);
  }
 
 
@@ -61,6 +60,18 @@ export type InteractiveCardsState = {
     this.setState({
       activeSet: index,
     });
+  }
+
+  updateFlippedCard( index: number) {
+    if (this.state.flippedCard == index ){
+      this.setState({
+        flippedCard: -1,
+      });
+    } else {
+      this.setState({
+        flippedCard: index,
+      });
+    }
   }
 
 
@@ -93,7 +104,7 @@ export type InteractiveCardsState = {
                 </nav>
               }
               {cta &&
-                <>{/*<Button link={cta.link} label={cta.label} target={cta.target} />*/}</>
+                <Button link={cta.link} label={cta.label} target={cta.target} download={cta.download}/>
               }
             </div>
 
@@ -103,9 +114,14 @@ export type InteractiveCardsState = {
                   return (
                     <div key={idx} className={`${InteractiveCardsClassName}__card-sets__cards ${this.state.activeSet == idx ? "__active" : ""}`}>
                       {set.cards && set.cards.length > 0 && set.cards.map((card, idxx) => {
+                        let specialKey = (idxx + 1) * (idx + 1);
+
                         return (
-                          <div key={idxx} className={`${InteractiveCardsClassName}__card`}>
-                            <div key={idxx} className={`${InteractiveCardsClassName}__card__inner`}>
+                          <div key={specialKey} className={`${InteractiveCardsClassName}__card`}>
+                            <div 
+                              className={`${InteractiveCardsClassName}__card__inner ${this.state.flippedCard == specialKey ? "__active" : ""}`}
+                              onClick={() => this.updateFlippedCard(specialKey)}
+                            >
                               <div className={`${InteractiveCardsClassName}__card__inner__label`}>Step</div>
                               <div className={`${InteractiveCardsClassName}__card__inner__index headline`}>{idxx}</div>
                               <p className={`${InteractiveCardsClassName}__card__inner__front`}>{card.front_text}</p>
@@ -118,6 +134,9 @@ export type InteractiveCardsState = {
                   );
                 })}
               </div>
+            }
+            {cta &&
+              <Button link={cta.link} label={cta.label} target={cta.target} download={cta.download}/>
             }
           </div>
         </Inner>

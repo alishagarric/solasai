@@ -7,6 +7,7 @@
  */
 
 // Core
+import Link from "next/link";
 import React from "react";
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { Base } from "../../constants/styles/Base";
@@ -109,7 +110,9 @@ export type NavigationData = {
       <>
         <NavigationStyle className={`${NavigationClassName} ${this.state.navHidden ? "__hidden" : ""}`}>
           <div className={`${NavigationClassName}__logo`}>
-            <Logo />
+            <AnchorLink href="#top">
+              <Logo />
+            </AnchorLink>
             <div className={`${NavigationClassName}__logo__menu-toggle`} onClick={() => this.updateOverlayNav(true)}>
               <Hamburger />
             </div>

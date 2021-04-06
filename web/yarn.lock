@@ -2232,11 +2232,6 @@ util@^0.11.0:
   dependencies:
     inherits "2.0.3"
 
-vanilla-lazyload@^17.3.0:
-  version "17.3.1"
-  resolved "https://registry.yarnpkg.com/vanilla-lazyload/-/vanilla-lazyload-17.3.1.tgz#8b3c3f9ee12b04ef04994304c5418eefe25279e1"
-  integrity sha512-9cag1j3ImrmP0VYbqOIT79qit34nV2SijuCgQucv4RhZs5Ln5xfZSqMSWeWgoBBVFp4AIIVSjpkMxmSoW3WiJQ==
-
 vm-browserify@1.1.2, vm-browserify@^1.0.1:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"

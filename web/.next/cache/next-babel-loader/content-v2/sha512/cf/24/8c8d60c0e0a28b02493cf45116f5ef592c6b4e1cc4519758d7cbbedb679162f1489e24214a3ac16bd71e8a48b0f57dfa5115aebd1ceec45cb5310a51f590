@@ -1,1 +1,0 @@
-{"ast":null,"code":"import { jsx as _jsx } from \"react/jsx-runtime\";\nexport const LogotypeClassName = \"logotype\";\nexport const Logotype = () => /*#__PURE__*/_jsx(\"svg\", {});","map":null,"metadata":{},"sourceType":"module"}

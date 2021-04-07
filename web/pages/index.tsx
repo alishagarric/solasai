@@ -68,7 +68,7 @@ const HomePage: NextPage<HomePage> = () => {
       <InteractiveCards 
         headline="How The SolasAI Platform Works"
         cta= {{
-          label: "Download whitepaper",
+          label: "Download More Information",
           download: "/files/SolasAI - Disparate Impact Mitigation and Proxy Detection Software.pdf",
         }}
         card_sets={[

@@ -320,7 +320,8 @@ export const InteractiveCardsStyle = styled.section`
               &__inner {
                 position: relative;
                 width: 100%;
-                height: 100%;                
+                height: 100%;  
+                cursor: auto;              
 
                 &__back {
                   opacity: 1;
@@ -347,12 +348,15 @@ export const InteractiveCardsStyle = styled.section`
                   }
                 }
 
-                &__active { 
+                &:hover {
+                  box-shadow: none;
+                }
+
+                &.__active { 
                   transform: none;
                   background-color: ${Theme.Color.White};
                   color: ${Theme.Color.Text};
-                  cursor: auto;
-
+                  
                   .${InteractiveCardsClassName}__card__inner {
                     &__front, &__index, &__label {
                       opacity: 1;

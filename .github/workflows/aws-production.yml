@@ -16,6 +16,12 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          
+      - run: cd web & npm install -g yarn
+      - run: cd web & yarn install --frozen-lockfile
       
       - name: Build
         run: cd web && yarn build

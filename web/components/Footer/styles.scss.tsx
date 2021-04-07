@@ -121,10 +121,13 @@ export const FooterStyle = styled.footer`
             margin-right: ${Root.Size};
             padding: ${Root.Size};
             font-size: 1rem;
-            text-transform: uppercase;
             font-family: ${Font.Header};
-            letter-spacing: 1px;
             color: ${Theme.Color.Text};
+
+            &::placeholder {
+              text-transform: uppercase;
+              letter-spacing: 1px;
+            }
           }
 
           input {

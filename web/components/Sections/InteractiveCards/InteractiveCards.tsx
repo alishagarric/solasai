@@ -114,7 +114,7 @@ export type InteractiveCardsState = {
                   return (
                     <div key={idx} className={`${InteractiveCardsClassName}__card-sets__cards ${this.state.activeSet == idx ? "__active" : ""}`}>
                       {set.cards && set.cards.length > 0 && set.cards.map((card, idxx) => {
-                        let specialKey = (idxx + 1) * (idx + 1);
+                        let specialKey = parseInt(`${idxx + 1}${idx + 1}`);
 
                         return (
                           <div key={specialKey} className={`${InteractiveCardsClassName}__card`}>

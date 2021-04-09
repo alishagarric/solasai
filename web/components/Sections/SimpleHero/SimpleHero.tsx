@@ -23,6 +23,7 @@ export type LMNTS_Section_SimpleHero = {
     link: string;
     label: string;
     target?: string;
+    noSmoothScroll?: boolean;
   }
 };
 
@@ -56,7 +57,7 @@ export const SimpleHero: React.FunctionComponent<LMNTS_Section_SimpleHero> = ({
             <p className={`${SimpleHeroClassName}__grid__guide txt-caption`}>
               <span>{guide_text}</span>
               {cta &&
-                <Button link={cta.link} label={cta.label} target={cta.target} />
+                <Button link={cta.link} label={cta.label} target={cta.target} noSmoothScroll={cta.noSmoothScroll}/>
               }
             </p>
           }

@@ -35,6 +35,6 @@ jobs:
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           application_name: solas.ai staging site
           environment_name: Solasaistagingsite-env
-          version_label: cicd-staging-action
+          version_label: ${{ github.ref }}
           region: us-east-1
           deployment_package: web/deploy.zip

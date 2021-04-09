@@ -4,7 +4,6 @@ on:
   push:
     branches: [main]
 
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 jobs:
@@ -28,3 +27,14 @@ jobs:
 
       - name: Generate deployment package
         run: cd web && zip -r deploy.zip . -x '*.git*' -x node_modules/\*
+
+      - name: Deploy to EB
+        uses: einaregilsson/beanstalk-deploy@v16
+        with:
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          application_name: www.solas.ai
+          environment_name: Wwwsolasai-env
+          version_label: cicd-action
+          region: us-east-1
+          deployment_package: deploy.zip

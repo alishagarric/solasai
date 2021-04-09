@@ -35,6 +35,6 @@ jobs:
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           application_name: www.solas.ai
           environment_name: Wwwsolasai-env
-          version_label: cicd-action
+          version_label: ${{ github.sha }}
           region: us-east-1
           deployment_package: web/deploy.zip

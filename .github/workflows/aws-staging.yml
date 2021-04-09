@@ -1,4 +1,4 @@
-name: CI to AWS Elastic Beanstalk
+name: CI to AWS EB (Staging)
 
 on:
   push:

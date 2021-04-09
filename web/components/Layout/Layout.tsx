@@ -34,12 +34,13 @@ export const LayoutClassName = "wrapper";
 export const Layout: React.FunctionComponent = ({ children }: Layout) => {
   const router: NextRouter = useRouter();
 
+
   return (
     <>
       <GlobalStyle />
       {/*<SetGlobalTheme />*/}
       <SiteHead title="Solas Ai" />
-      <Navigation />
+      <Navigation homepage={router.asPath == "/"}/>
       <main className={`${LayoutClassName}`}>{children}</main>
       <Footer/>
     </>

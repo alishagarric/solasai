@@ -29,7 +29,7 @@ import { NavigationClassName, NavigationOverlayClassName, NavigationOverlayStyle
 //////////////////////////////////////////////////////////////////////
 
 export type NavigationData = {
-  //
+  homepage: boolean;
 };
 
  export type NavigationState = {
@@ -50,7 +50,7 @@ export type NavigationData = {
    NavigationData,
    NavigationState
  > {
-    constructor(props: Navigation) {
+    constructor(props: NavigationData) {
         super(props);
     
         this.state = {
@@ -110,9 +110,18 @@ export type NavigationData = {
       <>
         <NavigationStyle className={`${NavigationClassName} ${this.state.navHidden ? "__hidden" : ""}`}>
           <div className={`${NavigationClassName}__logo`}>
-            <AnchorLink href="#top">
-              <Logo />
-            </AnchorLink>
+            {this.props.homepage ?
+              <AnchorLink href="#top">
+                <Logo />
+              </AnchorLink>
+            :
+              <Link href="/">
+                <a>
+                  <Logo />
+                </a>
+              </Link>
+            }
+
             <div className={`${NavigationClassName}__logo__menu-toggle`} onClick={() => this.updateOverlayNav(true)}>
               <Hamburger />
             </div>

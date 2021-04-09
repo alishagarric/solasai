@@ -37,4 +37,4 @@ jobs:
           environment_name: Wwwsolasai-env
           version_label: cicd-action
           region: us-east-1
-          deployment_package: deploy.zip
+          deployment_package: web/deploy.zip

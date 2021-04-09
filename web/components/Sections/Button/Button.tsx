@@ -21,6 +21,7 @@ export type LMNTS_Section_Button = {
   label: string;
   target?: string;
   download?: string;
+  noSmoothScroll?: boolean;
 };
 
 /**
@@ -35,7 +36,9 @@ export const Button: React.FunctionComponent<LMNTS_Section_Button> = ({
   label,
   download,
   target,
+  noSmoothScroll,
 }) => {
+  
 
   if (download) {
     return (
@@ -46,7 +49,7 @@ export const Button: React.FunctionComponent<LMNTS_Section_Button> = ({
         </a>
       </ ButtonStyle>
     );
-  } else if (link && !target){
+  } else if (link && !target && !noSmoothScroll){
     return (
       <ButtonStyle className={`${ButtonClassName}`}>
         <AnchorLink href={link} className="txt-caption">
@@ -58,6 +61,15 @@ export const Button: React.FunctionComponent<LMNTS_Section_Button> = ({
     return (
       <ButtonStyle className={`${ButtonClassName}`}>
         <a href={link} target={target ? target : "_self"} className="txt-caption">
+          {label}
+        </a>
+      </ButtonStyle>
+    );
+
+  } else if (link && noSmoothScroll) {
+    return (
+      <ButtonStyle className={`${ButtonClassName}`}>
+        <a href={link} className="txt-caption">
           {label}
         </a>
       </ButtonStyle>

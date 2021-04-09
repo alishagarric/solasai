@@ -26,7 +26,8 @@ const SuccessPage: NextPage<SuccessPage> = () => {
         logo={false}
         cta= {{
           label: "Go back home",
-          link: "/"
+          link: "/",
+          noSmoothScroll: true
         }}
       />
 

@@ -58,7 +58,7 @@ const HomePage: NextPage<HomePage> = () => {
             { icon: <NumberEye />, label: "Detects and quantifies algorithmic disparities" },
             { icon: <Illuminate />, label: "Illuminate drivers of disparities" },
             { icon: <Bullseye />, label: "Clarify drivers of predictive value" },
-            { icon: <GamePlay />, label: "Auto-generate viable alternatives with less disparity alternatives" },
+            { icon: <GamePlay />, label: "Auto-generate viable alternatives with less disparity" },
           ]}
         />
         {/*<Button label="Download Whitepaper" download="/files/SolasAI - Disparate Impact Mitigation and Proxy Detection Software.pdf"/>*/}

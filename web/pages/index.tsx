@@ -180,7 +180,7 @@ const HomePage: NextPage<HomePage> = () => {
         testimonials= {[
           {testimonial: "Reduced the time required to perform fair lending assessments and DI mitigation search by over 60%.", author: "Top-10 US Consumer Lender"},
           {testimonial: "Reduced a credit model’s gender and race disparities by half with only a marginal loss in performance.", author: "FinTech Client"},
-          {testimonial: "Doubled the predictive value for protected classes in a model healthcare model.", author: "Fortune 50 Healthcare Customer"},
+          {testimonial: "Doubled the predictive value for protected classes in a healthcare model.", author: "Fortune 50 Healthcare Customer"},
         ]}
       />
     </div>

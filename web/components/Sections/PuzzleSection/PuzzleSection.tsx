@@ -15,7 +15,9 @@ import {
 // __________________________________________________________________________________________
 
 export type LMNTS_Section_PuzzleSection = {
-  headline?: string;
+  headline?: { 
+    __html: string;
+  };
   sub_headline?: string;
   body?: { 
     __html: string 
@@ -42,7 +44,8 @@ export const PuzzleSection: React.FunctionComponent<LMNTS_Section_PuzzleSection>
       <Anchor id="why-solasai" />
       <Inner className={`${PuzzleSectionClassName}__inner`}>
         <div className={`${PuzzleSectionClassName}__container`}>
-          {headline && <h2 className={`${PuzzleSectionClassName}__headline h3`}>{headline}</h2>}
+          {headline && <div className={`${PuzzleSectionClassName}__headline`} dangerouslySetInnerHTML={headline}/>}
+
 
           <div className={`${PuzzleSectionClassName}__content`}>
             <div className={`${PuzzleSectionClassName}__content__body`}>

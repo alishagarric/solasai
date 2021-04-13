@@ -1,16 +1,16 @@
 
-export const BlueBirdClassName = "svg-blue-bird";
+export const OverlayBirdClassName = "svg-overlay-bird";
 
-export const BlueBird = () => (
+export const OverlayBird = () => (
 
-  <svg className={`${BlueBirdClassName}`} x="0px" y="0px" width="1069.86px" height="1111.09px" viewBox="0 0 1069.86 1111.09" xmlSpace="preserve">
+  <svg className={`${OverlayBirdClassName}`} x="0px" y="0px" width="1069.86px" height="1111.09px" viewBox="0 0 1069.86 1111.09" xmlSpace="preserve">
     <g transform="translate(0)">
       
-      <radialGradient id={`${BlueBirdClassName}__Path_1_2_`} cx="1878.5927" cy="-25.778" r="0.727" gradientTransform="matrix(21.3971 -982.2479 -889.05 -15.716 -62572.2773 1845811.75)" gradientUnits="userSpaceOnUse">
+      <radialGradient id={`${OverlayBirdClassName}__Path_1_2_`} cx="1878.5927" cy="-25.778" r="0.727" gradientTransform="matrix(21.3971 -982.2479 -889.05 -15.716 -62572.2773 1845811.75)" gradientUnits="userSpaceOnUse">
         <stop  offset="0%" style={{stopColor:"#2B4E6A", stopOpacity: 0.333}}/>
         <stop  offset="100%" style={{stopColor:"#112635"}}/>
       </radialGradient>
-      <path fill={`url(#${BlueBirdClassName}__Path_1_2_)`} d="M1024.96,388.05c2.2,3.32,4.3,6.69,6.3,10.1c63.95,108.63,28.04,248.51-80.33,312.91
+      <path fill={`url(#${OverlayBirdClassName}__Path_1_2_)`} d="M1024.96,388.05c2.2,3.32,4.3,6.69,6.3,10.1c63.95,108.63,28.04,248.51-80.33,312.91
         c-1.29,0.75-2.62,1.45-3.93,2.18c-4.13,2.34-8.31,4.47-12.52,6.54c-0.47,0.21-0.94,0.41-1.4,0.62c-0.18,0.09-0.38,0.09-0.57,0.17
         c-6.82,3.21-13.74,6.06-20.76,8.55l-0.18,0.06c-6.41,2.28-12.92,4.2-19.47,5.89c-0.96,0.24-1.93,0.53-2.89,0.77
         c-5.79,1.4-11.63,2.5-17.5,3.45c-1.42,0.23-2.79,0.54-4.21,0.74c-7.05,1.01-14.17,1.73-21.33,2.06
@@ -105,11 +105,11 @@ export const BlueBird = () => (
         c1.02-0.58,2.06-1.08,3.08-1.67c0.31-0.18,0.58-0.4,0.89-0.58c48.55-28.23,86.17-71.99,106.8-124.21c0.4,3.94,0.68,7.91,0.86,11.88
         C1075.52,743.38,978.26,850.52,852.64,857.01z"/>
       
-      <radialGradient id={`${BlueBirdClassName}__Path_2_2_`} cx="1877.488" cy="-16.8864" r="0.727" gradientTransform="matrix(3.3849 -257.676 -140.6418 -4.1228 -8196.8223 483935.5312)" gradientUnits="userSpaceOnUse">
+      <radialGradient id={`${OverlayBirdClassName}__Path_2_2_`} cx="1877.488" cy="-16.8864" r="0.727" gradientTransform="matrix(3.3849 -257.676 -140.6418 -4.1228 -8196.8223 483935.5312)" gradientUnits="userSpaceOnUse">
         <stop  offset="0%" style={{stopColor:"#2B4E6A", stopOpacity:0.333}}/>
         <stop  offset="100%" style={{stopColor:"#112635"}}/>
       </radialGradient>
-      <path fill={`url(#${BlueBirdClassName}__Path_2_2_)`} d="M532.32,0c19.76,40.86,15.59,77.54-31.95,128.84l-10.48-35.96
+      <path fill={`url(#${OverlayBirdClassName}__Path_2_2_)`} d="M532.32,0c19.76,40.86,15.59,77.54-31.95,128.84l-10.48-35.96
         c-19.14,22.07-38.28,43.61-41.9,77.78c-0.04,0.37-0.1,0.72-0.13,1.09c-0.26,2.72-0.42,5.49-0.42,8.34l0.01,0.57
         c0,0.27-0.01,0.52-0.01,0.79c-0.01,32.49,18.59,62.11,47.85,76.22c-36.15-83.39,36.77-108.02,36.77-108.02
         c-50.86,63.94,17.51,111.37,38.6,48.56c0,0,6.86,47.99-1.83,59.46c29.26-14.12,47.86-43.74,47.85-76.23

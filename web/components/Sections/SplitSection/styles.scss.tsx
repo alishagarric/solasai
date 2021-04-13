@@ -100,7 +100,7 @@ export const SplitSectionStyle = styled.section`
       .${SplitSectionClassName}__content {
         width: 100%;
         margin-left: 0;
-        padding: calc(${Root.Size} * 3);
+        padding: calc(${Root.Size} * 3) calc(${Root.Size} * 3) 0 calc(${Root.Size} * 3);
       }
     }
     

@@ -44,13 +44,14 @@ export const BlurredItemsSectionStyle = styled.section`
     .${BlurredItemsSectionClassName}__content {
       display: flex;
       flex-direction: row;
-      width: 80%;
+      width: 70%;
+      max-width: 800px;
       margin: 0 auto;
       align-items: center;
 
       &__body {
         padding-left: calc(${Root.Size} * 2);
-        flex: 4;
+        flex: 3;
 
         > * {
           max-width: 310px;
@@ -58,9 +59,10 @@ export const BlurredItemsSectionStyle = styled.section`
       }
 
       &__blurred-items {
-        flex: 4;
+        flex: 2;
         position: relative;
-        padding-top: 50%;
+        padding-top: 40%;
+       // transform: scale(.7);
 
         &__focused, &__blurred {
           position: absolute;
@@ -77,6 +79,8 @@ export const BlurredItemsSectionStyle = styled.section`
             text-align: center;
             transform: translateY(-50%);
             padding: ${Root.Size};
+            font-weight: 700;
+            font-size: .9rem;
           }
         }
 
@@ -141,10 +145,22 @@ export const BlurredItemsSectionStyle = styled.section`
       }
     }
 
+    @media (max-width: ${Base.Media.Width.Lg + "px"}) {
+      .${BlurredItemsSectionClassName}__content {
+        &__blurred-items {
+          &__focused, &__blurred {
+            span {
+              font-size: .7rem;
+            }
+          }
+        }
+      }
+    }
+
     @media (max-width: ${Base.Media.Width.Md + "px"}) {
       .${BlurredItemsSectionClassName}__content {
         width: 100%;
-        max-width: 600px;
+        max-width: 400px;
         flex-direction: column-reverse;
 
         &__blurred-items {
@@ -160,6 +176,12 @@ export const BlurredItemsSectionStyle = styled.section`
               width: 2px;
             }
           }
+
+          &__focused, &__blurred {
+            span {
+              font-size: 1rem;
+            }
+          }
         }
 
         &__body {
@@ -171,6 +193,16 @@ export const BlurredItemsSectionStyle = styled.section`
     
     @media (max-width: ${Base.Media.Width.Sm + "px"}) {
       .${BlurredItemsSectionClassName}__content {
+        max-width: 300px;
+
+        &__blurred-items {
+          &__focused, &__blurred {
+            span {
+              font-size: .9rem;
+            }
+          }
+        }
+
         &__body {
           > * {
             max-width: none;

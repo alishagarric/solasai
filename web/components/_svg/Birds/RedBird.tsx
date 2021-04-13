@@ -5,8 +5,8 @@ export const RedBird = () => (
   <svg className={RedBirdClassName} x="0px" y="0px" width="263.55px" height="273.71px" viewBox="0 0 263.55 273.71" xmlSpace="preserve">
   <g transform="translate(0)">
     <radialGradient id={`${RedBirdClassName}__radial-gradient`} cx="1961.8447" cy="-1366.8156" r="0.91" gradientTransform="matrix(241.9344 0 0 -241.967 -474509.3438 -330396.0938)" gradientUnits="userSpaceOnUse">
-      <stop offset="0" style={{stopColor:"#FFEA6A"}}/>
-      <stop offset="1" style={{stopColor:"#D41D00"}}/>
+      <stop offset="0%" style={{stopColor:"#FFEA6A"}}/>
+      <stop offset="100%" style={{stopColor:"#D41D00"}}/>
     </radialGradient>
     <path fill={`url(#${RedBirdClassName}__radial-gradient)`} d="M252.5,95.59c0.54,0.82,1.06,1.65,1.55,2.49c15.75,26.76,6.91,61.22-19.79,77.08
       c-0.32,0.18-0.65,0.36-0.97,0.54c-1.02,0.58-2.05,1.1-3.09,1.61c-0.12,0.05-0.23,0.1-0.35,0.15c-0.04,0.02-0.09,0.02-0.14,0.04

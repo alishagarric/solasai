@@ -66,7 +66,7 @@ const HomePage: NextPage<HomePage> = () => {
 
 
       <InteractiveCards 
-        headline="How The SolasAI Platform Works"
+        headline={{__html: `<h2 class="h3">How The <strong><span class="txt-red">Solas</span>AI</strong> Platform Works</h2>`}}
         cta= {{
           label: "Download More Information",
           download: "/files/SolasAI - Disparate Impact Mitigation and Proxy Detection Software.pdf",
@@ -79,7 +79,7 @@ const HomePage: NextPage<HomePage> = () => {
               { front_text: "We take testing for disparity and alternatives off your plate", back_text: "We expose and quantify disparities" },
               { front_text: "We provide you additional insight to make your model better", back_text: "We explain what drives value and disparities" },
               { front_text: "We preserve and expand the great work you have done", back_text: "We create alternatives without sacrificing predictive value" },
-              { front_text: "We generate the documentation and insights you need to choose the best viable alternative for you business", back_text: "We generate the information you need to make justifiable choices" }
+              { front_text: "We generate the documentation and insights you need to choose the best viable alternative for your business", back_text: "We generate the information you need to make justifiable choices" }
             ]
           },
           {
@@ -134,7 +134,7 @@ const HomePage: NextPage<HomePage> = () => {
       />
 
       <PuzzleSection 
-        headline="Why SolasAI Is Different"
+        headline={{__html: `<h2 class="h3">Why <strong><span class="txt-red">Solas</span>AI</strong> Is Different</h2>`}}
         sub_headline="SolasAI goes beyond Data Science"
         body={{__html: "<p>We approach the problem from multiple sides, which makes us a one-stop shop for fairer model reconstruction.</p>"}}
         puzzle_pieces={[
@@ -163,7 +163,7 @@ const HomePage: NextPage<HomePage> = () => {
 
       <WarningSection text={{__html: "<p className='h5'><strong>We are not trying to be AutoML.</strong> We don’t set out with the intention of reinventing or replacing your modeling process.</p>"}} />
       <SplitSection 
-        headline={{__html: "<h3><strong>SolasAI</strong> was created by industry-leading consultants and data scientists</h3>"}}
+        headline={{__html: `<h3><strong><span class="txt-red">Solas</span>AI</strong> was created by industry-leading consultants and data scientists</h3>`}}
         text_blocks={[
           {label: "45 Years", text: "in Employment Discrimination Analytics" },
           {label: "25 Years", text: "in Fair Lending Analytics" },

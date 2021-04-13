@@ -16,7 +16,7 @@ import { Base } from "../../constants/styles/Base";
 import { Theme } from "../../constants/Theme";
 import { ButtonClassName } from "../Sections/Button/styles.scss";
 import { ContactInfoClassName } from "../Sections/ContactInfo/styles.scss";
-import { BlueBird, BlueBirdClassName } from "../_svg/Birds/BlueBird";
+import { OverlayBirdClassName } from "../_svg/Birds/OverlayBird";
 import { BrandmarkClassName } from "../_svg/Brandmark/Brandmark";
 import { ExitClassName } from "../_svg/Icons/Exit";
 import { HamburgerClassName } from "../_svg/Icons/Hamburger";
@@ -166,7 +166,7 @@ export const NavigationOverlayStyle = styled.nav`
     flex-direction: column;
     justify-content: space-between;
 
-    .${BlueBirdClassName}{
+    .${OverlayBirdClassName}{
       position: absolute;
       height: 80%;
       right: -20%;

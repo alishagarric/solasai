@@ -16,6 +16,7 @@ import { Theme } from "../../constants/Theme";
 import { Button } from "../Sections/Button";
 import { ContactInfo } from "../Sections/ContactInfo";
 import { BlueBird } from "../_svg/Birds/BlueBird";
+import { OverlayBird } from "../_svg/Birds/OverlayBird";
 import { Brandmark } from "../_svg/Brandmark/Brandmark";
 import { Exit } from "../_svg/Icons/Exit";
 import { Hamburger } from "../_svg/Icons/Hamburger";
@@ -149,7 +150,7 @@ export type NavigationData = {
 
         <NavigationOverlayStyle className={`${NavigationOverlayClassName} ${this.state.overlayActive == true ? "__active" : ""}`}>
 
-          <BlueBird />
+          {<OverlayBird />}
 
           <div 
             className={`${NavigationOverlayClassName}__exit`}

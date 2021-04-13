@@ -481,17 +481,12 @@ html {
     -webkit-tap-highlight-color: transparent; /* for remove highlight */
   }
 
-  /* Intercom */
-  .intercom-namespace {
-    .intercom-launcher-frame {
-      bottom: unset !important;
-      top: 18px !important;
-      right: 139px !important;
-    }
+  .txt-red {
+    color: ${Theme.Color.Secondary};
   }
 
-  .intercom-container {
-    display: none !important;
+  strong {
+    font-weight: 600;
   }
 
 `;

@@ -31,7 +31,7 @@ export const PuzzleSectionStyle = styled.section`
   &.${PuzzleSectionClassName} {
     position: relative;
     margin-top: calc(${Root.Size} * 4);
-    margin-bottom: calc(${Root.Size} * 4);
+  //  margin-bottom: calc(${Root.Size} * 4);
 
     .${PuzzleSectionClassName}__container {
       max-width: 80%;
@@ -131,7 +131,24 @@ export const PuzzleSectionStyle = styled.section`
       }
     }
 
+    @media (max-width: ${Base.Media.Width.Lg + "px"}) {
+
+      .${PuzzleSectionClassName}__container {
+        .${PuzzleSectionClassName}__content {
+          &__pieces {
+            &__container {
+              
+              p {
+                font-size: .7rem;
+              }
+            }
+          }
+        }
+      }
+    }
+
     @media (max-width: ${Base.Media.Width.Md + "px"}) {
+      margin-bottom: calc(${Root.Size} * 4);
 
       .${PuzzleSectionClassName}__container {
         max-width: 600px;
@@ -151,6 +168,10 @@ export const PuzzleSectionStyle = styled.section`
           &__pieces {
             &__container {
               margin-left: 15%;
+
+              p {
+                font-size: 1rem;
+              }
             }
           }
         }
@@ -171,6 +192,10 @@ export const PuzzleSectionStyle = styled.section`
               padding-top: 100%;
               width: 100%;
               margin-left: 0;
+
+              p {
+                font-size: .9rem;
+              }
             }
           }
         }

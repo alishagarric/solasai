@@ -16,7 +16,9 @@ import {
 // __________________________________________________________________________________________
 
 export type LMNTS_Section_InteractiveCards = {
-  headline?: string;
+  headline?: { 
+    __html: string;
+  };
   cta?: LMNTS_Section_Button;
   card_sets: {
     label: string;
@@ -85,7 +87,7 @@ export type InteractiveCardsState = {
           <div className={`${InteractiveCardsClassName}__content`}>
             <Bird />
             <CircleDecor />
-            <h2 className={`${InteractiveCardsClassName}__headline h3`}>{headline}</h2>
+            {headline && <div className={`${InteractiveCardsClassName}__headline`} dangerouslySetInnerHTML={headline}/>}
 
             <div className={`${InteractiveCardsClassName}__header`}>
               {card_sets && card_sets.length > 0 &&
